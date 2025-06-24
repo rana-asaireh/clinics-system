@@ -12,7 +12,7 @@ import { Diagnosis } from '../../shared/models/diagnosis.model';
 export class AdminService {
   constructor(private http: HttpClient) { }
 
-  private baseUrl = 'http://localhost:3000';
+  private baseUrl = 'https://json-server-gky0.onrender.com';
 
   addClinic(clinic: Clinic): Observable<Clinic> {
     return this.http.post<Clinic>(`${this.baseUrl}/clinic`, clinic);

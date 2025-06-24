@@ -9,7 +9,7 @@ import { Diagnosis } from '../models/diagnosis.model';
 export class DiagnosisService {
   constructor(private http: HttpClient) { }
 
-  private baseUrl = 'http://localhost:3000/diagnosis';
+  private baseUrl = 'https://json-server-gky0.onrender.com/diagnosis';
   getDiagnosis(): Observable<Diagnosis[]> {
     return this.http.get<Diagnosis[]>(`${this.baseUrl}`);
   }

@@ -9,9 +9,9 @@ import { AppComponent } from '../../../app.component';
   providedIn: 'root'
 })
 export class AppointmentService {
-  private baseUrl = 'http://localhost:3000/appointment'
-  private doctorUrl = 'http://localhost:3000/doctor'
-  private patientUrl = 'http://localhost:3000/patient'
+  private baseUrl = 'https://json-server-gky0.onrender.com/appointment'
+  private doctorUrl = 'https://json-server-gky0.onrender.com/doctor'
+  private patientUrl = 'https://json-server-gky0.onrender.com/patient'
   constructor(private http: HttpClient) { }
 
 

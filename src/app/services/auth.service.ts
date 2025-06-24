@@ -11,7 +11,7 @@ import { User } from '../modules/shared/models/user.model';
 })
 export class AuthService {
   constructor(private http: HttpClient, private router: Router, private userService: UserService) { }
-  private baseUrl = 'http://localhost:3000/users';
+  private baseUrl = 'https://json-server-gky0.onrender.com/users';
 
   login(email: string, password: string): Observable<User> {
     return this.userService.getUser(email, password).pipe(

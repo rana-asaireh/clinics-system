@@ -11,10 +11,10 @@ import { Clinic } from '../models/clinic.model';
 })
 export class PaginationService {
 
-  private apiUrlDiagnosis = 'http://localhost:3000/diagnosis';
-  private apiUrlDrug = 'http://localhost:3000/drug';
-  private apiUrlDoctor = 'http://localhost:3000/doctor';
-  private apiUrlClinic = 'http://localhost:3000/clinic';
+  private apiUrlDiagnosis = 'https://json-server-gky0.onrender.com/diagnosis';
+  private apiUrlDrug = 'https://json-server-gky0.onrender.com/drug';
+  private apiUrlDoctor = 'https://json-server-gky0.onrender.com/doctor';
+  private apiUrlClinic = 'https://json-server-gky0.onrender.com/clinic';
 
   constructor(private http: HttpClient) { }
 

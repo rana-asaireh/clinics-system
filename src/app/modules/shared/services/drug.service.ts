@@ -10,7 +10,7 @@ export class DrugService {
 
   constructor(private http: HttpClient) { }
 
-  private baseUrl = 'http://localhost:3000/drug';
+  private baseUrl = 'https://json-server-gky0.onrender.com/drug';
   getDrugs(): Observable<Drug[]> {
     return this.http.get<Drug[]>(`${this.baseUrl}`);
   }

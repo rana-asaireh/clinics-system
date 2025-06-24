@@ -16,7 +16,7 @@ import { UserService } from '../../shared/services/user.service';
 export class PatientAuthService {
 
 
-  baseUrl = 'http://localhost:3000/patient'
+  baseUrl = 'https://json-server-gky0.onrender.com/patient'
   constructor(private http: HttpClient,private  userService:UserService) { }
 
   getPatientsList(): Observable<Patient[]> {

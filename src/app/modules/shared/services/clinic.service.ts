@@ -11,7 +11,7 @@ export class ClinicService {
 
   constructor(private http: HttpClient) { }
 
-  private baseUrl = 'http://localhost:3000/clinic';
+  private baseUrl = 'https://json-server-gky0.onrender.com/clinic';
   getClinics(): Observable<Clinic[]> {
     return this.http.get<Clinic[]>(`${this.baseUrl}`);
   }

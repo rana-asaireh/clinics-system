@@ -8,9 +8,9 @@ import { map, Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class UserService {
-  private baseUrl = 'http://localhost:3000/users'; 
-  private patientsBaseUrl = 'http://localhost:3000/patient';
-  private doctorsBaseUrl = 'http://localhost:3000/doctor'; 
+  private baseUrl = 'https://json-server-gky0.onrender.com/users'; 
+  private patientsBaseUrl = 'https://json-server-gky0.onrender.com/patient';
+  private doctorsBaseUrl = 'https://json-server-gky0.onrender.com/doctor'; 
   constructor(private http: HttpClient, private router: Router) { }
   getUser(email: string, password: string): Observable<User[]> {
     return this.http.get<User[]>(`${this.baseUrl}?email=${email}&password=${password}`)

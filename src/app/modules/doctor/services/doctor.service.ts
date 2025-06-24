@@ -12,10 +12,10 @@ import { Patient } from '../../shared/models/patient.model';
   providedIn: 'root',
 })
 export class DoctorService {
-  private baseUrl = 'http://localhost:3000/doctor';
-  private clinicBaseUrl = 'http://localhost:3000/clinic';
-  private appointmentsUrl = 'http://localhost:3000/appointment';
-  private patientsUrl = 'http://localhost:3000/patient';
+  private baseUrl = 'https://json-server-gky0.onrender.com/doctor';
+  private clinicBaseUrl = 'https://json-server-gky0.onrender.com/clinic';
+  private appointmentsUrl = 'https://json-server-gky0.onrender.com/appointment';
+  private patientsUrl = 'https://json-server-gky0.onrender.com/patient';
   constructor(private http: HttpClient, private userService: UserService) {}
 
   getDoctors(): Observable<Doctor[]> {
