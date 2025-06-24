@@ -1,0 +1,101 @@
+// Define variables for reusability
+$primary-color: #2c5f5d;
+$secondary-color: #244c4b;
+$background-color: rgba(255, 255, 255, 0.95);
+$info-background: rgba(1, 50, 47, 0.85);
+
+// Define reusable mixins
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+// Styles for .contact-fullscreen
+.contact-fullscreen {
+  height: 100vh;
+  background: url("../../../../../public/assets/contact-img.png") no-repeat
+    center center/cover;
+  @include flex-center;
+  font-family: Arial, sans-serif;
+}
+
+// Styles for .contact-container
+.contact-container {
+  display: flex;
+
+  width: 90%;
+  max-width: 1000px;
+  overflow: hidden;
+}
+
+.form-box {
+  flex: 1;
+  padding: 40px;
+  background-color: white;
+  h2 {
+    margin-bottom: 20px;
+    color: #01322f;
+    font-size: 20px;
+    text-align: center;
+  }
+  form {
+    .row {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 15px;
+    }
+    input,
+    textarea {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 14px;
+    }
+    button {
+      background-color: $primary-color;
+      color: white;
+      border: none;
+      padding: 12px 20px;
+      border-radius: 4px;
+      font-size: 16px;
+      width: 100%;
+      cursor: pointer;
+    }
+  }
+}
+.img-circle {
+  background-color: #01322f;
+  border-radius: 50%;
+  padding: 10px;
+}
+// Styles for .contact-info
+.contact-info {
+  flex: 1;
+  margin-left: 20px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+
+  h2 {
+    margin-bottom: 30px;
+    font-size: 22px;
+  }
+  .info-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    img {
+      width: 30px;
+    }
+    a,
+    span {
+      color: white;
+      text-decoration: none;
+      font-size: 16px;
+      margin-left: 15px;
+    }
+  }
+}

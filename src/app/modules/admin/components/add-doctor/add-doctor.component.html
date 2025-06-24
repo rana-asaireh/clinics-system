@@ -1,0 +1,96 @@
+<div class="form-container">
+  <form [formGroup]="formGroup">
+    <h1 *ngIf="!id">Add Doctor</h1>
+    <h1 *ngIf="id">Update Doctor</h1>
+    <div class="line"></div>
+    <span *ngIf="success" class="success">{{success}}</span>
+    <span *ngIf="success" class="error">{{error}}</span>
+    <div class="l1">
+      <label for="select-clinic">Clinic Name</label>
+      <select id="select-clinic" formControlName="selectClinic"
+        [class.invalid]="formGroup.controls['selectClinic']?.touched && !formGroup.controls['selectClinic']?.valid">
+        <option value="" disabled selected>All Clinics</option>
+        <option *ngFor="let clinic of clinics" [value]="clinic.id">{{clinic.name}}</option>
+      </select>
+      <span class="error"
+        *ngIf="formGroup.controls['selectClinic']?.touched && formGroup.controls['selectClinic']?.errors?.['required']">
+        Clinic Name is required</span>
+    </div>
+    <div class="form-group">
+      <label for="doctor_name">Doctor Name</label>
+      <input type="text" id="doctor_name" placeholder="Add Doctor's Name" formControlName="name"
+        [class.invalid]="formGroup.controls['name']?.touched && !formGroup.controls['name']?.valid">
+      <span class="error"
+        *ngIf="formGroup.controls['name']?.touched && formGroup.controls['name']?.errors?.['required']">Doctor
+        Name is required</span>
+    </div>
+    <div class="form-group">
+      <label for="doctor_gender" class="l11">Gender</label>
+      <div class="radio-group">
+        <label>
+          <input type="radio" formControlName="gender" value="male" /> Male
+        </label>
+        <label>
+          <input type="radio" formControlName="gender" value="female" /> Female
+        </label>
+      </div>
+      <span class="error"
+        *ngIf="formGroup.controls['gender']?.touched && formGroup.controls['gender']?.errors?.['required']">
+        Gender is required
+      </span>
+    </div>
+    <div class="form-group">
+      <label for="doctor_email">Doctor Email</label>
+      <input type="text" id="doctor_email" placeholder="Add Doctor's Email" formControlName="email"
+        [class.invalid]="formGroup.controls['email']?.touched && !formGroup.controls['email']?.valid">
+      <span class="error"
+        *ngIf="formGroup.controls['email']?.touched && formGroup.controls['email']?.errors?.['required']">Doctor
+        Email is required</span>
+      <span class="error"
+        *ngIf="formGroup.controls['email']?.touched && formGroup.controls['email']?.errors?.['email']">Doctor
+        Email is invalid</span>
+      <span *ngIf="message" class="error">{{message}}</span>
+    </div>
+    <div class="form-group">
+      <label for="doctor_password">Password</label>
+      <div class="password-wrapper">
+        <input [type]="showPassword ? 'text' : 'password'" id="doctor_password" placeholder="Add Doctor's Password"
+          formControlName="password"
+          [class.invalid]="formGroup.controls['password']?.touched && !formGroup.controls['password']?.valid" />
+        <img [src]="showPassword ? 'eye.png' : 'Invisible.png'" class="input-icon" alt="toggle password visibility"
+          (click)="togglePasswordVisibility()" />
+      </div>
+      <span class="error"
+        *ngIf="formGroup.controls['password']?.touched && formGroup.controls['password']?.errors?.['required']">
+        Password is required
+      </span>
+    </div>
+    <div class="form-group">
+      <label for="doctor_phone">Doctor Phone</label>
+      <input type="text" id="doctor_phone" placeholder="Add Doctor's Phone" formControlName="phone"
+        [class.invalid]="formGroup.controls['phone']?.touched && !formGroup.controls['phone']?.valid">
+      <span class="error"
+        *ngIf="formGroup.controls['phone']?.touched && formGroup.controls['phone']?.errors?.['required']">Doctor
+        phone is required</span>
+      <span class="error"
+        *ngIf="formGroup.controls['phone']?.touched && formGroup.controls['phone']?.errors?.['pattern']">
+        Doctor phone must contain numbers
+      </span>
+    </div>
+    <div class="form-group">
+      <label for="doctor_specification">Doctor Specialization</label>
+      <input type="text" id="doctor_specification" placeholder="Add Doctor's Specification"
+        formControlName="specification"
+        [class.invalid]="formGroup.controls['specification']?.touched && !formGroup.controls['specification']?.valid">
+      <span class="error"
+        *ngIf="formGroup.controls['specification']?.touched && formGroup.controls['specification']?.errors?.['required']">Doctor
+        Specialization is required</span>
+    </div>
+    <div class="button-wrapper" *ngIf="!id">
+      <button (click)="addDoctor()">Add</button>
+    </div>
+    <div class="button-wrapper" *ngIf="id">
+      <button (click)="updateDoctor()">Update</button>
+    </div>
+  </form>
+</div>

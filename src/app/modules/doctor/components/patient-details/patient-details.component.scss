@@ -1,0 +1,351 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 50px;
+  justify-items: center;
+  align-items: center;
+  width: 100%;
+  max-width: 1200px;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  gap: 8px;
+}
+
+.pagination button {
+  display: inline-block;
+  padding: 8px 12px;
+  border: 1px solid #4b9c8e;
+  background-color: white;
+  color: #4b9c8e;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 14px;
+}
+
+.pagination button:hover {
+  background-color: #4b9c8e;
+  color: white;
+}
+
+.pagination button.active {
+  background-color: #4b9c8e;
+  color: white;
+  font-weight: bold;
+  pointer-events: none;
+}
+
+.pagination button:disabled {
+  background-color: #f0f0f0;
+  border-color: #ccc;
+  color: #999;
+  cursor: not-allowed;
+}
+
+.entry-count {
+  text-align: center;
+  margin-top: 10px;
+  color: #666;
+}
+
+.breadcrumb-container {
+  font-family: Arial, sans-serif;
+}
+
+.page-title {
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 22px;
+}
+
+.underline {
+  border: none;
+  border-top: 2px solid #2aa198;
+  margin-top: 8px;
+}
+
+.card {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: transform 0.2s ease;
+  width: 226px;
+}
+
+.card.animate {
+  transform: scale(1.03);
+}
+
+.icon-circle {
+  width: 80px;
+  height: 80px;
+  background-color: #389d93;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 10px;
+}
+
+.card h3 {
+  margin: 10px 0;
+}
+
+.card button {
+  background-color: #389d93;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.card button:hover {
+  background-color: #239e91;
+}
+
+.filters {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.search-container {
+  display: flex;
+  flex-direction: column;
+  font-family: "Segoe UI", sans-serif;
+  width: 100%;
+}
+
+.search-container label {
+  margin-bottom: 5px;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.search-wrapper {
+  position: relative;
+}
+
+.search-wrapper input {
+  padding: 10px 35px 10px 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+  width: 100%;
+}
+
+.search-icon {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.filters input[type="text"] {
+  padding: 17px 22px;
+  border: 1px solid #ccc;
+  border-radius: 7px;
+  font-size: 14px;
+  height: 36px;
+  box-shadow: none;
+  outline: none;
+  width: 100%;
+}
+
+.filters input[type="text"]::placeholder {
+  color: #aaa;
+}
+
+.search-container {
+  position: relative;
+}
+
+.search-container input {
+  width: 100%;
+  padding: 8px 36px 8px 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 14px;
+  outline: none;
+}
+
+.search-icon {
+  position: absolute;
+  right: 12px;
+  top: 67%;
+  transform: translateY(-50%);
+  font-size: 16px;
+  pointer-events: none;
+}
+
+.doctors-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 2rem;
+  padding: 2rem;
+
+  > div {
+    width: 250px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    padding: 1.5rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+    }
+
+    img {
+      width: 100px;
+      height: 100px;
+      object-fit: cover;
+      border-radius: 50%;
+      margin-bottom: 1rem;
+    }
+
+    h2 {
+      margin: 0.5rem 0;
+      font-size: 1.25rem;
+      color: #333;
+    }
+
+    p {
+      margin: 0.25rem 0;
+      font-size: 0.95rem;
+      color: #555;
+    }
+
+    button {
+      margin-top: 1rem;
+      padding: 0.5rem 1.2rem;
+      background-color: #4b9c8e;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.2s;
+
+      &:hover {
+        background-color: #3e8378;
+      }
+    }
+  }
+}
+
+/// loader
+.Loader-background {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100vh;
+  background-color: rgb(255, 255, 255);
+  padding: 0px;
+  margin: 0px;
+}
+.Clinic-Logo-Loader {
+  margin-right: 10px;
+  width: 50px;
+}
+.indicator {
+  display: flex;
+  gap: 10px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(2);
+}
+.indicator svg polyline {
+  fill: none;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.indicator svg polyline#back {
+  stroke: rgba(59, 211, 171, 0.3);
+}
+.indicator svg polyline#front {
+  stroke: #3bd3ab;
+  stroke-dasharray: 12, 36;
+  stroke-dashoffset: 48;
+  animation: dash 1s linear infinite;
+}
+.cta {
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+  color: #222;
+  font-weight: bold;
+}
+@-moz-keyframes dash {
+  62.5% {
+    opacity: 0;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+@-webkit-keyframes dash {
+  62.5% {
+    opacity: 0;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+@-o-keyframes dash {
+  62.5% {
+    opacity: 0;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+@keyframes dash {
+  62.5% {
+    opacity: 0;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+/* Spin animation */
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

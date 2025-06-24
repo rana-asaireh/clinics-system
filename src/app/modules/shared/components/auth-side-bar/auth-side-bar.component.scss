@@ -1,0 +1,49 @@
+.layout-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 250px;
+  height: 100vh;
+  background-color: #ffffff;
+  background-color: white;
+  overflow-y: auto;
+  box-shadow: 0px 1px 4px 4px rgba(0, 0, 0, 0.327);
+  z-index: 1000;
+}
+
+.app-brand {
+  padding: 20px;
+  width: 250px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.menu-inner {
+  list-style: none;
+}
+
+.menu-item {
+  border-bottom: 1px solid #eee;
+}
+
+.menu-item a {
+  display: flex;
+  width: 250px;
+  gap: 10px;
+  align-items: center;
+  padding: 15px 20px;
+  color: #333;
+  text-decoration: none;
+  transition: background-color 0.3s;
+}
+
+.menu-item.active a,
+.menu-item a:hover {
+  background-color: #f0f0f0;
+}
+
+.menu-icon img {
+  width: 20px;
+  margin-right: 10px;
+}

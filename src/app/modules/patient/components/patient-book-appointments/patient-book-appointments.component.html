@@ -1,0 +1,69 @@
+<div class="container">
+  <h1>Book Appointment</h1>
+  <div class="line"></div>
+  <span *ngIf="success" class="success">{{success}}</span>
+  <span *ngIf="success" class="error">{{error}}</span>
+  <div class="Loader-background" *ngIf="loader">
+        <div class="indicator">
+            <svg width="24px" height="20px">
+                <polyline id="back" points="1 6 4 6 6 11 10 1 12 6 15 6"></polyline>
+                <polyline id="front" points="1 6 4 6 6 11 10 1 12 6 15 6"></polyline>
+            </svg>
+        </div>
+    </div>
+  <form [formGroup]="appointmentForm" (ngSubmit)="submitAppointment()" *ngIf="!loader">
+    <input type="hidden" formControlName="id">
+      <div class="form-row">
+          <div class="form-group">
+              <label for="full-name">Full Name</label>
+              <input type="text" id="full-name" name="full-name" formControlName="fullname">
+              <div *ngIf="appointmentForm.get('fullname')?.invalid && appointmentForm.get('fullname')?.touched">
+                  <small *ngIf="appointmentForm.get('fullname')?.hasError('required')" class="error-message">Name is required.</small>
+              </div>
+          </div>
+          <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" formControlName="email">
+              <div *ngIf="appointmentForm.get('email')?.invalid && appointmentForm.get('email')?.touched">
+                  <small *ngIf="appointmentForm.get('email')?.hasError('required')" class="error-message">Email is required.</small>
+                  <small *ngIf="appointmentForm.get('email')?.hasError('email')" class="error-message">Invalid email format.</small>
+              </div>
+          </div>
+      </div>
+      <div class="form-group">
+          <label for="phone-number">Phone Number</label>
+          <input type="text" id="phone-number" name="phone-number" formControlName="phone">
+          <div *ngIf="appointmentForm.get('phone')?.invalid && appointmentForm.get('phone')?.touched">
+              <small *ngIf="appointmentForm.get('phone')?.hasError('required')" class="error-message">Phone number is required.</small>
+              <small *ngIf="appointmentForm.get('phone')?.hasError('pattern')" class="error-message">Invalid phone number format (10-15 digits).</small>
+          </div>
+      </div>
+      <div class="form-row">
+          <div class="form-group preferred-date">
+              <label for="preferred-date">Preferred Date</label>
+              <input type="date" id="preferred-date" name="preferred-date" formControlName="date" [min]="todayDate">
+              
+              <div *ngIf="appointmentForm.get('date')?.invalid && appointmentForm.get('date')?.touched">
+                  <small *ngIf="appointmentForm.get('date')?.hasError('required')" class="error-message">Date is required.</small>
+              </div>
+          </div>
+          <div class="form-group preferred-time">
+              <label for="preferred-time">Preferred Time</label>
+              <input type="time" id="preferred-time" name="preferred-time" formControlName="time">
+              <div *ngIf="appointmentForm.get('time')?.invalid && appointmentForm.get('time')?.touched">
+                  <small *ngIf="appointmentForm.get('time')?.hasError('required')" class="error-message">Time is required.</small>
+              </div>
+          </div>
+      </div>
+      <div class="form-group">
+          <label for="reason">Reason for Visit</label>
+          <textarea id="reason" name="reason" formControlName="reason"></textarea>
+          <div *ngIf="appointmentForm.get('reason')?.invalid && appointmentForm.get('reason')?.touched">
+              <small *ngIf="appointmentForm.get('reason')?.hasError('required')" class="error-message">Reason is required.</small>
+          </div>
+      </div>
+      <div class="button-container">
+          <button type="submit" >Book Appointment</button>
+      </div>
+  </form>
+</div>

@@ -1,0 +1,112 @@
+<div>
+  <h1 class="page-title">Profile</h1>
+  <div class="line"></div>
+</div>
+<span *ngIf="success" class="success">{{success}}</span>
+<span *ngIf="success" class="error">{{error}}</span>
+<div class="Loader-background" *ngIf="loader">
+        <div class="indicator">
+            <svg width="24px" height="20px">
+                <polyline id="back" points="1 6 4 6 6 11 10 1 12 6 15 6"></polyline>
+                <polyline id="front" points="1 6 4 6 6 11 10 1 12 6 15 6"></polyline>
+            </svg>
+        </div>
+</div>
+<form [formGroup]="patientProfileForm" (ngSubmit)=" updateProfile()" class="container" *ngIf="!loader">
+  <div class="test">
+    <div class="profile-row">
+      <div class="form-group-container">
+        <div class="form-group">
+          <div class="profile-icon">
+            <img src="/user-profile.png">
+          </div>
+          <input type="text" class="profile-input" id="full-name" placeholder="Full Name" formControlName="name">
+        </div>
+        <div *ngIf="patientProfileForm.get('name')?.invalid && patientProfileForm.get('name')?.touched"
+          class="error-message">
+          <small *ngIf="patientProfileForm.get('name')?.hasError('required')">Name is required.</small>
+        </div>
+      </div>
+      <div class="form-group-container">
+        <div class="form-group">
+          <div class="profile-icon">
+            <img src="/email-profile.png">
+          </div>
+          <input type="email" class="profile-input" id="email" placeholder="User@gmail.com" formControlName="email">
+        </div>
+        <div *ngIf="patientProfileForm.get('email')?.invalid && patientProfileForm.get('email')?.touched"
+          class="error-message">
+          <small *ngIf="patientProfileForm.get('email')?.hasError('required')">Email is required.</small>
+          <small *ngIf="patientProfileForm.get('email')?.hasError('email')">Invalid email.</small>
+        </div>
+      </div>
+    </div>
+
+    <div class="profile-row">
+      <div class="form-group-container">
+        <div class="form-group">
+          <div class="profile-icon">
+            <img src="/phone-profile.png">
+          </div>
+          <input type="tel" class="profile-input" id="phone-number" placeholder="+962 XXX XXX XX"
+            formControlName="phone">
+        </div>
+        <div *ngIf="patientProfileForm.get('phone')?.invalid && patientProfileForm.get('phone')?.touched"
+          class="error-message">
+          <small *ngIf="patientProfileForm.get('phone')?.hasError('required')">Phone number is required.</small>
+          <small *ngIf="patientProfileForm.get('phone')?.hasError('pattern')">Invalid phone number.</small>
+        </div>
+      </div>
+      <div class="form-group-container">
+        <div class="form-group">
+          <div class="profile-icon">
+            <img src="/gender.png">
+          </div>
+          <select class="profile-input" id="gender" formControlName="gender" placeholder="Select Gender">
+            <option value="" disabled selected>Select Gender</option>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+          </select>
+        </div>
+        <div *ngIf="patientProfileForm.get('gender')?.invalid && patientProfileForm.get('gender')?.touched"
+          class="error-message">
+          <small *ngIf="patientProfileForm.get('gender')?.hasError('required')">Gender is required.</small>
+        </div>
+      </div>
+    </div>
+
+    <div class="profile-row">
+      <div class="form-group-container">
+        <div class="form-group">
+          <div class="profile-icon">
+            <img src="/date.png">
+          </div>
+          <input type="date" class="profile-input" id="birthdate" placeholder="YYYY-MM-DD" formControlName="dob" />
+        </div>
+        <div *ngIf="patientProfileForm.get('dob')?.invalid && patientProfileForm.get('dob')?.touched"
+          class="error-message">
+          <small *ngIf="patientProfileForm.get('dob')?.hasError('required')">Date of birth is required.</small>
+        </div>
+      </div>
+      <div class="form-group-container">
+        <div class="form-group">
+          <div class="profile-icon">
+            <img src="/holding-hand-key.png">
+          </div>
+          <div class="input-wrapper">
+            <input [type]="inputType['password']" class="profile-input with-icon" id="password" placeholder="Password" formControlName="password">
+            <img [src]="isVisible['password'] ? '/images/Visible1.png' : '/images/Invisible1.png'"
+              class="input-icon" alt="Toggle visibility" (click)="toggleVisibility('password')" />
+          </div>
+          <div *ngIf="patientProfileForm.get('password')?.invalid && patientProfileForm.get('password')?.touched"
+            class="error-message">
+            <small *ngIf="patientProfileForm.get('password')?.hasError('minlength')">Password must be at least 6 characters long.</small>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+      <button type="submit" class="btn">Update</button>
+    
+  </div>
+</form>

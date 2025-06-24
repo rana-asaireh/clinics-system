@@ -1,0 +1,83 @@
+<div class="doctor-list">
+  <h1>List of Doctors</h1>
+  <div class="line"></div>
+  <button class="add-doctor-btn" routerLink="/admin/add-doctor">Add Doctor</button>
+  <div class="container">
+    <div class="input-group">
+      <label class="label" for="select">Clinic Name</label>
+      <select class="select" id="select" [(ngModel)]="selectedClinicId" (change)="filterDoctors()">
+        <option value="">All Clinics</option>
+        <option *ngFor="let clinic of clinics" [value]="clinic.id">{{ clinic.name }}</option>
+      </select>
+    </div>
+    <div class="input-group search-container">
+      <label class="label" for="searchBy">Doctor Name / Doctor Specialization</label>
+      <input type="text" class="search-input" placeholder="search doctor name" [(ngModel)]="searchTerm"
+        (keydown)="onKeyDown($event)" (keyup)="onKeyUp($event)" />
+      <span class="search-icon" (click)="onSearch()">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#4b9c8e" viewBox="0 0 16 16">
+          <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001
+                     c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0
+                     1.415-1.414l-3.85-3.85a1.007 1.007 0 0
+                     0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11
+                     0 5.5 5.5 0 0 1 11 0z" />
+        </svg>
+      </span>
+    </div>
+  </div>
+  <span class="error" *ngIf="error">{{ error }}</span>
+  <span class="success" *ngIf="success">{{ success }}</span>
+  <div class="Loader-background" *ngIf="loader">
+    <div class="indicator">
+      <svg width="24px" height="20px">
+        <polyline id="back" points="1 6 4 6 6 11 10 1 12 6 15 6"></polyline>
+        <polyline id="front" points="1 6 4 6 6 11 10 1 12 6 15 6"></polyline>
+      </svg>
+    </div>
+  </div>
+  <table *ngIf="!error && !loader">
+    <colgroup>
+      <col style="width: 7.5%;">
+      <col style="width: 20%;">
+      <col style="width: 8.5%;">
+      <col style="width: 22%;">
+      <col style="width: 15%;">
+      <col style="width: 15%;">
+      <col style="width: 12%;">
+    </colgroup>
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Name</th>
+        <th>Gender</th>
+        <th style="text-wrap: wrap;">Email</th>
+        <th>Phone</th>
+        <th>Specialization</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let doctor of filteredDoctors; let index = index">
+        <td>{{ (currentPage - 1) * pageSize + index + 1 }}</td>
+        <td>{{ doctor.name }}</td>
+        <td>{{ doctor.gender }}</td>
+        <td>{{ doctor.email }}</td>
+        <td>{{ doctor.phone }}</td>
+        <td>{{ doctor.specification }}</td>
+        <td class="action-buttons">
+          <div class="tooltip edit-btn" (click)="editDoctor(doctor.id)">
+            <a><img src="edit.png" alt="Edit"></a>
+            <span class="tooltip-text">Edit</span>
+          </div>
+          <div class="tooltip delete-btn" (click)="deleteDoctor(doctor.id)">
+            <a><img src="trash.png" alt="Delete"></a>
+            <span class="tooltip-text">Delete</span>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <app-pagination [totalItems]="totalDoctors" [itemsPerPage]="pageSize" [currentPage]="currentPage"
+    (pageChanged)="goToPage($event)" *ngIf="!error && !loader">
+  </app-pagination>
+</div>

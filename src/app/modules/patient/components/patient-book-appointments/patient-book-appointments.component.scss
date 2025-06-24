@@ -1,0 +1,229 @@
+:host {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-grow: 1;
+  // padding: 20px;
+  min-height: auto;
+  background-color: white;
+  flex-direction: column;
+}
+h1 {
+  font-size: 28px;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.line {
+    width: 100%;
+    background-color: #4b9c8e;
+    height: 1px;
+    margin-bottom: 10px;
+}
+
+.container {
+  background-color: transparent;
+  
+  border-radius: 0;
+  box-shadow: none;
+  width: 100%;
+  box-sizing: border-box;
+  margin: 20px auto;
+}
+
+
+
+
+
+.success {
+  display: block;
+  color: green;
+  margin-bottom: -5px;
+  margin-top: 20px;
+  font-size: 14px;
+}
+
+.error {
+  color: red;
+  display: block;
+  margin-top: 10px;
+  font-size: 14px;
+}
+.form-group {
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  color: #333;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="date"],
+input[type="time"],
+textarea {
+  width: calc(100% - 24px);
+  padding:10px 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  box-sizing: border-box;
+  font-size: 14px;
+}
+
+input[type="date"],
+input[type="time"] {
+  width: calc(100% - 24px);
+}
+
+textarea {
+  height: 80px;
+}
+
+.form-row {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.form-row > div {
+  flex: 1;
+  min-width: 200px;
+}
+
+.button-container {
+  text-align: left;
+  margin-top: 10px;
+}
+
+button {
+  background-color: #4B9C8E;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size:14px;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #006666;
+}
+
+.error-message {
+  color: red;
+  font-size: 0.8em;
+  display: block;
+  margin-top: 5px;
+}
+
+input.invalid,
+textarea.invalid,
+select.invalid {
+  border: 1px solid red;
+}
+
+select {
+  width: calc(100% - 24px);
+  padding: 10px 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  background-color: white;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-image: url('data:image/svg+xml;charset=US-ASCII,<svg xmlns="http://www.w3.org/2000/svg" width="14" height="10" viewBox="0 0 14 10"><path fill="%234b9c8e" d="M7 10L0 0h14z"/></svg>');
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  background-size: 12px;
+  cursor: pointer;
+  margin-bottom: 20px;
+  margin-top: 5px;
+  font-size: 14px;
+}
+
+select:hover,
+select:focus {
+  border-color: #4b9c8e;
+}
+
+.Loader-background {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(255, 255, 255);
+  padding: 0px;
+  margin: 0px;
+}
+
+.indicator {
+  display: flex;
+  gap: 10px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(2);
+}
+
+.indicator svg polyline {
+  fill: none;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.indicator svg polyline#back {
+  stroke: rgba(59, 211, 171, 0.3);
+}
+
+.indicator svg polyline#front {
+  stroke: #3bd3ab;
+  stroke-dasharray: 12, 36;
+  stroke-dashoffset: 48;
+  animation: dash 1s linear infinite;
+}
+
+@-moz-keyframes dash {
+  62.5% {
+    opacity: 0;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@-webkit-keyframes dash {
+  62.5% {
+    opacity: 0;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@-o-keyframes dash {
+  62.5% {
+    opacity: 0;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes dash {
+  62.5% {
+    opacity: 0;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}

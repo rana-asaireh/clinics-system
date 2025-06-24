@@ -1,0 +1,103 @@
+<div class="Loader-background" *ngIf="loader">
+    <div class="indicator">
+        <svg width="24px" height="20px">
+            <polyline id="back" points="1 6 4 6 6 11 10 1 12 6 15 6"></polyline>
+            <polyline id="front" points="1 6 4 6 6 11 10 1 12 6 15 6"></polyline>
+        </svg>
+    </div>
+</div>
+<div >
+    <h1>Appointments List</h1>
+    <div class="line"></div>
+    
+    <!-- Filter Dropdown -->
+    <div class="filter">
+        <div>
+            <label for="">Status Approval</label>
+            <select name="" id="" [(ngModel)]="selectedApprovalStatus" (change)="onFilterChange()">
+                <option value="">All Status</option>
+                <option *ngFor="let status of approvalStatuses" [value]="status">
+                    {{ status }}
+                </option>
+            </select>
+        </div>
+    </div>
+
+    <!-- Table -->
+    <table *ngIf="!loader">
+        <colgroup>
+            <col style="width: 7.5%;">
+            <col style="width: 20%;">
+            <col style="width: 20%;">
+            <col style="width: 20%;">
+            <col style="width: 15%;">
+            <col style="width: 17.5%;">
+        </colgroup>
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Clinic Name</th>
+                <th>Doctor Name</th>
+                <th (click)="sortTable('date')" style="cursor: pointer;">
+                    Reservation Date
+                    <span>
+                        {{ sortColumn === 'date' ? (sortDirection === 'asc' ? '↑' : '↓') : '↕' }}
+                    </span>
+                </th>
+                <th (click)="sortTable('approval_status')" style="cursor: pointer;">
+                    Status
+                    <span>
+                        {{ sortColumn === 'approval_status' ? (sortDirection === 'asc' ? '↑' : '↓') : '↕' }}
+                    </span>
+                </th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+
+        <!-- Conditional Tbody -->
+        <tbody *ngIf="filteredAppointments.length > 0; else noData">
+            <tr *ngFor="let appointment of filteredAppointments; let i = index">
+                <td>{{ (currentPage - 1) * pageSize + i + 1 }}</td>
+                <td>{{ getClinicNameByDoctorId(appointment.doctor_id) }}</td>
+                <td>{{ getDoctorName(appointment.doctor_id) }}</td>
+                <td>{{ appointment.date | date: 'mediumDate' }}</td>
+                <td [ngClass]="getApprovalStatus(appointment.approval_status)">
+                    {{ appointment.approval_status }}
+                </td>
+                <td>
+                    <div class="action-icons">
+                        <div class="icon tooltip delete-btn" (click)="cancelAppointment(appointment.id)">
+                            <img src="trash.png" alt="Cancel">
+                        </div>
+                        <div class=" icon tooltip edit-btn"
+                            [ngClass]="{ 'disabled': appointment.approval_status === 'rejected' }"
+                            (click)="editAppointment(appointment.id)">
+                            <img src="edit.png" alt="Edit">
+                        </div>
+                        <div class="icon tooltip view-btn"
+                            [ngClass]="{ 'disabled': appointment.approval_status === 'rejected' }"
+                            (click)="viewAppointmentDetails(appointment.id)">
+                            <img src="view.png" alt="View">
+                        </div>
+                    </div>
+                </td>
+
+            </tr>
+        </tbody>
+    </table>
+
+    <!--if no appointments =>empty body -->
+    <ng-template #noData>
+        <tbody>
+            <tr>
+                <td colspan="6" class="no-data">No appointments found for the selected status.</td>
+            </tr>
+        </tbody>
+    </ng-template>
+
+    <!-- Pagination -->
+    <app-pagination [totalItems]="totalAppointments" [currentPage]="currentPage" [itemsPerPage]="pageSize"
+        (pageChanged)="goToPage($event)">
+    </app-pagination>
+  </div>
+

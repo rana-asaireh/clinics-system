@@ -1,0 +1,874 @@
+{
+  "users": [
+    {
+      "type": "admin",
+      "name": "Mohammed Aqqad",
+      "email": "Mohammed.Aqqad@amal-clinic.com",
+      "password": "Ma&&1234",
+      "id": "7075"
+    },
+    {
+      "type": "doctor",
+      "name": "Omar Turkmani",
+      "email": "omar1970@amal-clinic.com",
+      "password": "Ot**1234",
+      "id": "0756"
+    },
+    {
+      "type": "doctor",
+      "name": "Tariq Najjar",
+      "email": "tariqnajjar@amal-clinic.com",
+      "password": "tn**1234",
+      "id": "5019"
+    },
+    {
+      "type": "doctor",
+      "name": "Amina Saeed",
+      "email": "aminasaeed@amal-clinic.com",
+      "password": "sa**1256",
+      "id": "fa55"
+    },
+    {
+      "type": "doctor",
+      "name": "Mariam Al-Hariri",
+      "email": "mariam1970@amal-clinic.com",
+      "password": "mar**1244",
+      "id": "3c17"
+    },
+    {
+      "type": "doctor",
+      "name": "Rami Al-Najdi",
+      "email": "ralnajdi20@amal-clinic.com",
+      "password": "rr**na14",
+      "id": "0a91"
+    },
+    {
+      "type": "doctor",
+      "name": "Nour Abdeen",
+      "email": "nour440@amal-clinic.com",
+      "password": "rr**na14",
+      "id": "eba9"
+    },
+    {
+      "type": "patient",
+      "name": "Salma Alfaqeeh",
+      "email": "salma1980@gmail.com",
+      "password": "Sa**1234",
+      "id": "5d38"
+    },
+    {
+      "id": "a341",
+      "type": "patient",
+      "name": "Lara Amer",
+      "email": "aya860@gmail.com",
+      "password": "ay**1234"
+    },
+    {
+      "id": "8e92",
+      "type": "patient",
+      "name": " Laila Mohammad",
+      "email": "laila879@gmail.com",
+      "password": "la**1234"
+    },
+    {
+      "id": "eefa",
+      "type": "patient",
+      "name": "Ahmad Yousef",
+      "email": "ahmad456@gmail.com",
+      "password": "Sa**1234"
+    },
+    {
+      "id": "aec4",
+      "type": "patient",
+      "name": "Hamza Al-Ahmad",
+      "email": "hamza30@gmail.com",
+      "password": "ha**1234"
+    },
+    {
+      "id": "f1e8",
+      "type": "patient",
+      "name": "Sara Amer",
+      "email": "sara090@gmail.com",
+      "password": "sa**1234"
+    },
+    {
+      "id": "f332",
+      "type": "patient",
+      "name": "Omar Al-Ahmad",
+      "email": "omar1234@gmail.com",
+      "password": "om**1235"
+    },
+    {
+      "id": "f332",
+      "type": "doctor",
+      "name": "Sami Khader",
+      "email": "Sami-khader@amal-clinic.com",
+      "password": "Fdgh*125"
+    },
+    {
+      "id": "16fb",
+      "type": "doctor",
+      "name": "Lana Momani",
+      "email": "lana-momani@amal-clinic.com",
+      "password": "Jh542*j85"
+    },
+    {
+      "id": "2daa",
+      "type": "doctor",
+      "name": "Ahmad Mohtaseb",
+      "email": "Ahmad.Mohtaseb@amal-clinic.com",
+      "password": "Fs*251435"
+    }
+  ],
+  "patient": [
+    {
+      "id": "1",
+      "type": "patient",
+      "name": "Salma Alfaqeeh",
+      "email": "salma1980@gmail.com",
+      "password": "Sa**1234",
+      "phone": "962776532545",
+      "gender": "female",
+      "dob": "1980-09-09"
+    },
+    {
+      "id": "2",
+      "type": "patient",
+      "name": "Lara Amer",
+      "email": "aya860@gmail.com",
+      "password": "ay**1234",
+      "phone": "96277980805",
+      "gender": "female",
+      "dob": "1999-04-24"
+    },
+    {
+      "id": "3",
+      "type": "patient",
+      "name": " Laila Mohammad",
+      "email": "laila879@gmail.com",
+      "password": "la**1234",
+      "phone": "96278975602",
+      "gender": "female",
+      "dob": "2001-04-02"
+    },
+    {
+      "id": "4",
+      "type": "patient",
+      "name": "Ahmad Yousef",
+      "email": "ahmad456@gmail.com",
+      "password": "Sa**1234",
+      "phone": "962785949202",
+      "gender": "male",
+      "dob": "1985-10-03"
+    },
+    {
+      "id": "5",
+      "type": "patient",
+      "name": "Hamza Al-Ahmad",
+      "email": "hamza30@gmail.com",
+      "password": "ha**1234",
+      "phone": "962776536804",
+      "gender": "male",
+      "dob": "2000-05-10"
+    },
+    {
+      "id": "6",
+      "type": "patient",
+      "name": "Sara Amer",
+      "email": "sara090@gmail.com",
+      "password": "sa**1234",
+      "phone": "962778702146",
+      "gender": "female",
+      "dob": "1990-04-06"
+    },
+    {
+      "id": "7",
+      "type": "patient",
+      "name": "Omar Al-Ahmad",
+      "email": "omar1234@gmail.com",
+      "password": "om**1235",
+      "phone": "962778702146",
+      "gender": "male",
+      "dob": "1990-04-06"
+    }
+  ],
+  "doctor": [
+    {
+      "id": "1",
+      "type": "doctor",
+      "name": "Omar Turkmani",
+      "gender": "male",
+      "email": "omar1970@amal-clinic.com",
+      "password": "Ot**1234",
+      "phone": "962785249201",
+      "specification": "Dentist",
+      "clinic_id": "1"
+    },
+    {
+      "id": "2",
+      "type": "doctor",
+      "name": "Tariq Najjar",
+      "gender": "male",
+      "email": "tariqnajjar@amal-clinic.com",
+      "password": "tn**1234",
+      "phone": "962795039201",
+      "specification": "Pediatrician",
+      "clinic_id": "2"
+    },
+    {
+      "id": "3",
+      "type": "doctor",
+      "name": "Amina Saeed",
+      "gender": "female",
+      "email": "aminasaeed@amal-clinic.com",
+      "password": "sa**1256",
+      "phone": "962795039203",
+      "specification": "Physical Therapist",
+      "clinic_id": "3"
+    },
+    {
+      "id": "4",
+      "type": "doctor",
+      "name": "Mariam Al-Hariri",
+      "gender": "female",
+      "email": "mariam1970@amal-clinic.com",
+      "password": "mar**1244",
+      "phone": "962799979034",
+      "specification": "Gynecologist",
+      "clinic_id": "4"
+    },
+    {
+      "id": "5",
+      "type": "doctor",
+      "name": "Rami Al-Najdi",
+      "gender": "male",
+      "email": "ralnajdi20@amal-clinic.com",
+      "password": "rr**na14",
+      "phone": "962799998976",
+      "specification": "Dentist",
+      "clinic_id": "1"
+    },
+    {
+      "id": "6",
+      "type": "doctor",
+      "name": "Nour Abdeen",
+      "gender": "female",
+      "email": "nour440@amal-clinic.com",
+      "password": "rr**na14",
+      "phone": "9627994560276",
+      "specification": "Gynecologist",
+      "clinic_id": "4"
+    },
+    {
+      "id": "3d27",
+      "type": "doctor",
+      "name": "Sami Khader",
+      "email": "Sami-khader@amal-clinic.com",
+      "password": "Fdgh*125",
+      "phone": "962781123695",
+      "specification": "Physical Therapist",
+      "clinic_id": "3",
+      "gender": "male"
+    },
+    {
+      "id": "0341",
+      "type": "doctor",
+      "name": "Lana Momani",
+      "email": "lana-momani@amal-clinic.com",
+      "password": "Jh542*j85",
+      "phone": "962795568214",
+      "specification": "Physical Therapist",
+      "clinic_id": "3",
+      "gender": "female"
+    },
+    {
+      "id": "9992",
+      "type": "doctor",
+      "name": "Ahmad Mohtaseb",
+      "email": "Ahmad.Mohtaseb@amal-clinic.com",
+      "password": "Fs*251435",
+      "phone": "962785562475",
+      "specification": "Dentist",
+      "clinic_id": "1",
+      "gender": "male"
+    }
+  ],
+  "admin": [
+    {
+      "id": "1",
+      "type": "admin",
+      "name": "Mohammed Aqqad",
+      "email": "Mohammed.Aqqad@amal-clinic.com",
+      "password": "Ma&&1234",
+      "phone": "962784256326"
+    }
+  ],
+  "appointment": [
+    {
+      "id": "1",
+      "date": "2025-04-02",
+      "patient_id": "1",
+      "doctor_id": "1",
+      "approval_status": "rejected",
+      "appointment_details": {
+        "drugs": [
+          {
+            "id": "1",
+            "name": "Paracetamol"
+          },
+          {
+            "id": "2",
+            "name": "Amoxicillin"
+          }
+        ],
+        "diagnosis": [
+          {
+            "id": "1",
+            "name": "Tooth Decay"
+          }
+        ]
+      },
+      "payment": "paid"
+    },
+    {
+      "id": "2",
+      "date": "2025-04-10",
+      "patient_id": "1",
+      "doctor_id": "2",
+      "approval_status": "approved",
+      "appointment_details": {
+        "drugs": [
+          {
+            "id": "3",
+            "name": "Ibuprofen"
+          }
+        ],
+        "diagnosis": [
+          {
+            "id": "2",
+            "name": "Cavity"
+          }
+        ]
+      },
+      "payment": "unpaid"
+    },
+    {
+      "id": "5",
+      "date": "2025-04-05",
+      "patient_id": "2",
+      "doctor_id": "2",
+      "approval_status": "approved",
+      "appointment_details": {
+        "drugs": [
+          {
+            "id": "2",
+            "name": "Amoxicillin"
+          },
+          {
+            "id": "3",
+            "name": "Ibuprofen"
+          }
+        ],
+        "diagnosis": [
+          {
+            "id": "1",
+            "name": "Gingivitis"
+          }
+        ]
+      },
+      "payment": "paid"
+    },
+    {
+      "id": "6",
+      "date": "2025-04-12",
+      "patient_id": "2",
+      "doctor_id": "3",
+      "approval_status": "pending",
+      "appointment_details": {
+        "drugs": [
+          {
+            "id": "181b",
+            "name": "Ferrous Sulfate"
+          },
+          {
+            "id": "2da0",
+            "name": "Folic Acid"
+          }
+        ],
+        "diagnosis": [
+          {
+            "id": "4",
+            "name": "Gestational Diabetes"
+          }
+        ]
+      },
+      "payment": "unpaid"
+    },
+    {
+      "id": "7",
+      "date": "2025-04-07",
+      "patient_id": "3",
+      "doctor_id": "1",
+      "approval_status": "approved",
+      "appointment_details": {
+        "drugs": [
+          {
+            "id": "a0f6",
+            "name": "Chlorhexidine Mouthwash"
+          }
+        ],
+        "diagnosis": [
+          {
+            "id": "8fa4",
+            "name": "Dental Abscess"
+          }
+        ]
+      },
+      "payment": "paid"
+    },
+    {
+      "id": "8",
+      "date": "2025-04-14",
+      "patient_id": "3",
+      "doctor_id": "5",
+      "approval_status": "approved",
+      "appointment_details": {
+        "drugs": [
+          {
+            "id": "1",
+            "name": "Clindamycin"
+          },
+          {
+            "id": "a508",
+            "name": "Paracetamol"
+          }
+        ],
+        "diagnosis": [
+          {
+            "id": "0a11",
+            "name": "Otitis Media"
+          }
+        ]
+      },
+      "payment": "paid"
+    },
+    {
+      "id": "9",
+      "date": "2025-04-10",
+      "patient_id": "5",
+      "doctor_id": "7",
+      "approval_status": "approved",
+      "appointment_details": {
+        "drugs": [
+          {
+            "id": "74f2",
+            "name": "Salbutamol"
+          }
+        ],
+        "diagnosis": [
+          {
+            "id": "2",
+            "name": "Asthma"
+          }
+        ]
+      },
+      "payment": "paid"
+    },
+    {
+      "id": "10",
+      "date": "2025-04-20",
+      "patient_id": "5",
+      "doctor_id": "3",
+      "approval_status": "pending",
+      "appointment_details": {
+        "drugs": [
+          {
+            "id": "3",
+            "name": "Ibuprofen"
+          }
+        ],
+        "diagnosis": [
+          {
+            "id": "3",
+            "name": "Low Back Pain"
+          }
+        ]
+      },
+      "payment": "unpaid"
+    },
+    {
+      "id": "11",
+      "date": "2025-04-09",
+      "patient_id": "4",
+      "doctor_id": "4",
+      "approval_status": "cancelled",
+      "appointment_details": {
+        "drugs": [
+          {
+            "id": "20",
+            "name": "Metronidazole"
+          }
+        ],
+        "diagnosis": [
+          {
+            "id": "5",
+            "name": "Dental Infection"
+          }
+        ]
+      },
+      "payment": "paid"
+    },
+    {
+      "id": "12",
+      "date": "2025-04-16",
+      "patient_id": "4",
+      "doctor_id": "6",
+      "approval_status": "rejected",
+      "appointment_details": {
+        "drugs": [
+          {
+            "id": "21",
+            "name": "Hydrocodone"
+          }
+        ],
+        "diagnosis": [
+          {
+            "id": "6",
+            "name": "Tooth Extraction Recovery"
+          }
+        ]
+      },
+      "payment": "unpaid"
+    },
+    {
+      "id": "13",
+      "date": "2025-04-16",
+      "patient_id": "4",
+      "doctor_id": "3",
+      "approval_status": "approved",
+      "appointment_details": {
+        "drugs": [
+          {
+            "id": "21",
+            "name": "Hydrocodone"
+          }
+        ],
+        "diagnosis": [
+          {
+            "id": "6",
+            "name": "Tooth Extraction Recovery"
+          }
+        ]
+      },
+      "payment": "unpaid"
+    },
+    {
+      "id": "14",
+      "date": "2025-04-16",
+      "patient_id": "4",
+      "doctor_id": "1",
+      "approval_status": "rejected",
+      "appointment_details": {
+        "drugs": [
+          {
+            "id": "21",
+            "name": "Hydrocodone"
+          }
+        ],
+        "diagnosis": [
+          {
+            "id": "6",
+            "name": "Tooth Extraction Recovery"
+          }
+        ]
+      },
+      "payment": "unpaid"
+    },
+    {
+      "id": "15",
+      "date": "2025-04-16",
+      "patient_id": "4",
+      "doctor_id": "3",
+      "approval_status": "approved",
+      "appointment_details": {
+        "drugs": [
+          {
+            "id": "21",
+            "name": "Hydrocodone"
+          }
+        ],
+        "diagnosis": [
+          {
+            "id": "6",
+            "name": "Tooth Extraction Recovery"
+          }
+        ]
+      },
+      "payment": "unpaid"
+    },
+    {
+      "id": "16",
+      "date": "2025-04-05",
+      "patient_id": "4",
+      "doctor_id": "3",
+      "approval_status": "approved",
+      "appointment_details": {
+        "drugs": [
+          {
+            "id": "21",
+            "name": "Hydrocodone"
+          }
+        ],
+        "diagnosis": [
+          {
+            "id": "6",
+            "name": "Tooth Extraction Recovery"
+          }
+        ]
+      },
+      "payment": "unpaid"
+    },
+    {
+      "id": "17",
+      "date": "2025-04-16",
+      "patient_id": "4",
+      "doctor_id": "4",
+      "approval_status": "cancelled",
+      "appointment_details": {
+        "drugs": [
+          {
+            "id": "21",
+            "name": "Hydrocodone"
+          }
+        ],
+        "diagnosis": [
+          {
+            "id": "6",
+            "name": "Tooth Extraction Recovery"
+          }
+        ]
+      },
+      "payment": "unpaid"
+    },
+    {
+      "id": "18",
+      "date": "2025-04-16",
+      "patient_id": "4",
+      "doctor_id": "1",
+      "approval_status": "cancelled",
+      "appointment_details": {
+        "drugs": [
+          {
+            "id": "21",
+            "name": "Hydrocodone"
+          }
+        ],
+        "diagnosis": [
+          {
+            "id": "6",
+            "name": "Tooth Extraction Recovery"
+          }
+        ]
+      },
+      "payment": "unpaid"
+    },
+    {
+      "id": "19",
+      "date": "2025-04-03",
+      "patient_id": "6",
+      "doctor_id": "6",
+      "approval_status": "pending",
+      "appointment_details": {
+        "drugs": [
+          {
+            "id": "22",
+            "name": "Calcium Carbonate"
+          }
+        ],
+        "diagnosis": [
+          {
+            "id": "7",
+            "name": "Pregnancy Supplements"
+          }
+        ]
+      },
+      "payment": "paid"
+    },
+    {
+      "id": "20",
+      "date": "2025-04-17",
+      "patient_id": "6",
+      "doctor_id": "2",
+      "approval_status": "approved",
+      "appointment_details": {
+        "drugs": [
+          {
+            "id": "23",
+            "name": "Iron Tablets"
+          }
+        ],
+        "diagnosis": [
+          {
+            "id": "4",
+            "name": "Gestational Diabetes"
+          }
+        ]
+      },
+      "payment": "unpaid"
+    },
+    {
+      "date": "2025-05-10",
+      "patient_id": "b87LHpi",
+      "doctor_id": "1",
+      "approval_status": "cancelled",
+      "appointment_details": {
+        "reason": "my teeth hurt",
+        "drugs": "",
+        "diagnosis": ""
+      },
+      "payment": "",
+      "time": "12:43",
+      "id": "Inu0mt-"
+    },
+    {
+      "date": "2025-05-12",
+      "patient_id": "b87LHpi",
+      "doctor_id": "3",
+      "approval_status": "pending",
+      "appointment_details": {
+        "reason": "health setback",
+        "drugs": "",
+        "diagnosis": ""
+      },
+      "payment": "",
+      "time": "09:46",
+      "id": "0Rk3i1W"
+    },
+    {
+      "date": "2025-05-12",
+      "patient_id": "b87LHpi",
+      "doctor_id": "4",
+      "approval_status": "pending",
+      "appointment_details": {
+        "reason": "Make sure the baby's safety",
+        "drugs": "",
+        "diagnosis": ""
+      },
+      "payment": "",
+      "time": "15:49",
+      "id": "vakzNol"
+    },
+    {
+      "date": "2025-05-14",
+      "patient_id": "b87LHpi",
+      "doctor_id": "1",
+      "approval_status": "pending",
+      "appointment_details": {
+        "reason": "I want to get orthodontic treatment.",
+        "drugs": "",
+        "diagnosis": ""
+      },
+      "payment": "",
+      "time": "08:51",
+      "id": "cL0z-Jn"
+    }
+  ],
+  "drug": [
+    {
+      "id": "1",
+      "name": "Clindamycin"
+    },
+    {
+      "id": "2",
+      "name": "Amoxicillin"
+    },
+    {
+      "id": "3",
+      "name": "Ibuprofen"
+    },
+    {
+      "id": "4",
+      "name": "Insulin"
+    },
+    {
+      "id": "a508",
+      "name": "Paracetamol"
+    },
+    {
+      "id": "ac57",
+      "name": "Diclofenac"
+    },
+    {
+      "id": "a0f6",
+      "name": "Chlorhexidine Mouthwash"
+    },
+    {
+      "id": "74f2",
+      "name": "Salbutamol"
+    },
+    {
+      "id": "2da0",
+      "name": "Folic Acid"
+    },
+    {
+      "id": "181b",
+      "name": "Ferrous Sulfate"
+    }
+  ],
+  "diagnosis": [
+    {
+      "id": "1",
+      "name": "Gingivitis"
+    },
+    {
+      "id": "2",
+      "name": "Asthma"
+    },
+    {
+      "id": "3",
+      "name": "Low Back Pain"
+    },
+    {
+      "id": "4",
+      "name": "Gestational Diabetes"
+    },
+    {
+      "id": "8fa4",
+      "name": "Dental Abscess"
+    },
+    {
+      "id": "3498",
+      "name": "Allergic Rhinitis"
+    },
+    {
+      "id": "8e64",
+      "name": "Tendonitis"
+    },
+    {
+      "id": "33e0",
+      "name": "Osteoarthritis"
+    },
+    {
+      "id": "0a11",
+      "name": "Otitis Media"
+    }
+  ],
+  "clinic": [
+    {
+      "id": "1",
+      "name": "Dental Clinic"
+    },
+    {
+      "id": "2",
+      "name": "Pediatrics Clinic"
+    },
+    {
+      "id": "3",
+      "name": "Physical Therapy"
+    },
+    {
+      "id": "4",
+      "name": "Maternity Center"
+    }
+  ]
+}

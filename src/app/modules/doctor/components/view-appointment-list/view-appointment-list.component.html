@@ -1,0 +1,54 @@
+<div class="breadcrumb-container">
+  <h2 class="page-title">Patient Details</h2>
+
+  <hr class="underline" />
+</div>
+<div class="Loader-background" *ngIf="loader">
+  <div class="indicator">
+    <svg width="24px" height="20px">
+      <polyline id="back" points="1 6 4 6 6 11 10 1 12 6 15 6"></polyline>
+      <polyline id="front" points="1 6 4 6 6 11 10 1 12 6 15 6"></polyline>
+    </svg>
+  </div>
+</div>
+<form [formGroup]="appointmentForm" *ngIf="!loader">
+
+  <label>Patient Name
+    <input type="text" formControlName="patientName" readonly />
+  </label>
+
+  <label>Doctor Name
+    <input type="text" formControlName="doctorName" readonly />
+  </label>
+
+  <label>Clinic Name
+    <input type="text" formControlName="clinicName" readonly />
+  </label>
+
+
+  <label>Patient Phone Number:
+    <input type="text" formControlName="phoneNumber" readonly />
+  </label>
+
+  <label>Patient Email
+    <input type="email" formControlName="email" readonly />
+  </label>
+  <label>Reservation Date
+    <input type="date" formControlName="reservationDate" readonly />
+  </label>
+
+
+
+
+
+
+  <label>Appointment Status
+    <input type="text" formControlName="appointmentStatus" readonly />
+  </label>
+
+  <label>Payment
+    <input type="text" formControlName="payment" readonly />
+  </label>
+
+
+</form>

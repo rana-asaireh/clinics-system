@@ -1,0 +1,29 @@
+<li class="nav-item" style="box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.155); border-bottom: 0px !important;">
+  <div class="nav-wrapper">
+    <a class="nav-link" href="javascript:void(0);">
+      <div class="avatar">
+        <img src="/assets/layout/Group 121.svg" alt="User Avatar" />
+      </div>
+      <h1 class="username">{{user.name}}</h1>
+      <img class="arrow-icon" src="/assets/layout/arrowdown.webp" alt="Dropdown Arrow">
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a class="dropdown-item" routerLink="/">
+          <img src="/assets/layout/home-agreement.png" alt="Profile Icon">
+          <span>Home</span>
+        </a>
+      </li>
+      <li>
+        <div class="dropdown-divider"></div>
+      </li>
+      <li>
+        <a class="dropdown-item" (click)="logout()">
+          <img src="/assets/layout/logout.png" alt="Logout Icon">
+          <span>Logout</span>
+        </a>
+      </li>
+    </ul>
+  </div>
+</li>
+

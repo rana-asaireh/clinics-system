@@ -1,0 +1,103 @@
+
+  <div class="Loader-background" *ngIf="loader">
+        <div class="indicator">
+            <svg width="24px" height="20px">
+                <polyline id="back" points="1 6 4 6 6 11 10 1 12 6 15 6"></polyline>
+                <polyline id="front" points="1 6 4 6 6 11 10 1 12 6 15 6"></polyline>
+            </svg>
+        </div>
+</div>
+  <h1>Appointment Details</h1>
+  <div class="line"></div>
+    <div *ngIf="!loader">
+      <div class="appointment-details-container" *ngIf="appointmentsList">
+  <!-- Appointment + Doctor + Patient Info -->
+  <h2>Appointment & User Details</h2>
+  <table class="details-table appointmet-table-top">
+    <thead>
+      <tr>
+        <th>Field</th>
+        <th>Value</th>
+        <th>Field</th>
+        <th>Value</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th>Appointment ID</th>
+        <td>{{ appointmentsList?.id }}</td>
+        <th>Date</th>
+        <td>{{ appointmentsList?.date }}</td>
+      </tr>
+      <tr>
+        <th>Status</th>
+        <td>{{ appointmentsList?.approval_status }}</td>
+        <th>Payment</th>
+        <td>{{ appointmentsList?.payment }}</td>
+      </tr>
+      <tr>
+        <th>Doctor Name</th>
+        <td>{{ getDoctorObj(appointmentsList?.doctor_id)?.name }}</td>
+        <th>Doctor Speciality</th>
+        <td>{{ getDoctorObj(appointmentsList?.doctor_id)?.specification }}</td>
+      </tr>
+      <tr>
+        <th>Clinic Name</th>
+        <td>{{ getClinicObjByDoctorId(appointmentsList?.doctor_id)?.name }}</td>
+        <th>Patient Name</th>
+        <td>{{ getPatientObj(appointmentsList?.patient_id)?.name }}</td>
+      </tr>
+      <tr>
+        <th>Patient Email</th>
+        <td>{{ getPatientObj(appointmentsList?.patient_id)?.email }}</td>
+        <th>Patient Phone</th>
+        <td>{{ getPatientObj(appointmentsList?.patient_id)?.phone }}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="appointment-details">
+
+
+    <!-- Drugs Table -->
+    <div>
+      <h3>Prescribed Drugs</h3>
+      <table class="details-table" *ngIf="appointmentsList?.appointment_details?.drugs?.length">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Drug Name</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let drug of appointmentsList.appointment_details.drugs; index as i">
+            <td>{{ i + 1 }}</td>
+            <td>{{ drug.name }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <!-- Diagnosis Table -->
+    <div>
+      <h3>Diagnosis</h3>
+      <table class="details-table" *ngIf="appointmentsList?.appointment_details?.diagnosis?.length">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Diagnosis Name</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let diag of appointmentsList.appointment_details.diagnosis; index as i">
+            <td>{{ i + 1 }}</td>
+            <td>{{ diag.name }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+
+  </div>
+
+</div>
+</div>

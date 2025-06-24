@@ -1,0 +1,63 @@
+.footer {
+  display: flex;
+  justify-content: space-between;
+  background: #f1f6f5;
+  padding: 20px;
+  flex-wrap: wrap;
+  border-radius: 16px;
+}
+
+.footer input {
+  padding: 6px;
+  margin-top: 6px;
+  margin-right: 6px;
+}
+.footer button {
+  padding: 6px 10px;
+  background-color: #1e8c8c;
+  color: white;
+  border: none;
+  border-radius: 4px;
+}
+.icons a {
+  margin-right: 10px;
+  font-size: 20px;
+  margin-top: 12px;
+}
+.icons {
+  margin-top: 13px;
+}
+.footer-logo {
+  font-weight: bold;
+  font-size: 24px;
+  color: #1e8c8c;
+}
+.contact-us {
+  font-weight: bold;
+  font-family: "Cairo", sans-serif;
+  margin-left: 0px;
+
+}
+.copy-right {
+  font-family: "Quicksand", sans-serif;
+  font-size: 13px;
+  width: 205px;
+  margin-top: 20px;
+  height: 52px;
+}
+.contact-data {
+  margin-top: 10px;
+ p{
+  margin-bottom: 5px;
+ }
+}
+
+.our-social {
+  font-weight: bold;
+  font-family: "Cairo", sans-serif;
+  margin-left: 0px;
+}
+.newsletter p {
+  font-weight: bold;
+  font-family: "Cairo", sans-serif;
+}

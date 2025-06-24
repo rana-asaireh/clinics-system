@@ -1,0 +1,87 @@
+<div>
+  <div class="breadcrumb-container">
+    <h2 class="page-title">View appointment list</h2>
+    <hr class="underline" />
+  </div>
+
+  <div class="filters">
+    <div class="date">
+      <label for="dateInput">Date</label>
+      <input type="date" id="dateInput" placeholder="Search by date" [(ngModel)]="searchDate" />
+    </div>
+    <div>
+
+    </div>
+
+    <div class="search-container">
+      <label for="searchNameInput">Patient Name</label>
+      <input type="text" id="searchNameInput" placeholder="Search by patient name" [(ngModel)]="searchName" />
+      <div>
+        <span class="search-icon">
+          <i class="fas fa-search" style="color: #389d93;"></i>
+        </span>
+      </div>
+    </div>
+  </div>
+  <div class="Loader-background" *ngIf="loader">
+    <div class="indicator">
+      <svg width="24px" height="20px">
+        <polyline id="back" points="1 6 4 6 6 11 10 1 12 6 15 6"></polyline>
+        <polyline id="front" points="1 6 4 6 6 11 10 1 12 6 15 6"></polyline>
+      </svg>
+    </div>
+  </div>
+  <table *ngIf="!loader">
+    <colgroup>
+      <col style="width: 10%;" />
+      <col style="width: 30%;" />
+      <col style="width: 20%;" />
+      <col style="width: 20%;" />
+      <col style="width: 10%;" />
+    </colgroup>
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Name</th>
+        <th>Reservation Date</th>
+        <th>Reservation Status</th>
+        <th>View Details</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of paginatedAppointments(); let index = index">
+        <td>{{ (currentPage - 1) * itemsPerPage + index + 1 }}</td>
+        <td>{{ item.patient?.name || 'Unknown' }}</td>
+        <td>{{ item.appointment.date | date: 'yyyy-MM-dd' }}</td>
+        <td>
+          <span [ngClass]="getStatusClass(item.appointment.approval_status)">
+            {{ item.appointment.approval_status }}
+          </span>
+        </td>
+        <td>
+          <div class="test">
+            <img src="view.png" alt="View Details" class="view-details-img"
+              (click)="goToDetails(item.appointment.id!)" />
+          </div>
+
+      </tr>
+    </tbody>
+  </table>
+
+
+  <div class="pagination" *ngIf="totalPages > 1">
+    <button *ngFor="let page of [].constructor(totalPages); let i = index" (click)="changePage(i + 1)"
+      [class.active]="currentPage === i + 1">
+      {{ i + 1 }}
+    </button>
+  </div>
+
+
+
+  <p class="entry-count" *ngIf="totalPages > 1">
+    Showing {{ paginatedAppointments().length }} out of {{ filteredAppointments.length }} entries
+  </p>
+
+
+
+</div>

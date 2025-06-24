@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>ClinicsManagementSystem</title>
+  <base href="/">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <script>const navItem = document.querySelector('.nav-item');
+    const navLink = document.querySelector('.nav-link');
+    const dropdownMenu = document.querySelector('.dropdown-menu');
+    navLink.addEventListener('click', (e) => {
+      e.stopPropagation();
+      dropdownMenu.style.display = dropdownMenu.style.display === 'flex' ? 'none' : 'flex';
+    });
+    document.addEventListener('click', (e) => {
+      if (!navItem.contains(e.target)) {
+        dropdownMenu.style.display = 'none';
+      }
+    });
+  </script>
+</head>
+
+<body>
+  <app-root></app-root>
+</body>
+
+</html>

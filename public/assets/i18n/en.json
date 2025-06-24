@@ -1,0 +1,19 @@
+{
+    "app": {
+        "login": {
+            "title": "Login Page",
+            "email": "Email Address",
+            "email_holder": "Enter your email",
+            "email_invalid": "Email Address is invalid",
+            "email_required": "Email Address is required",
+            "password_required": "Password is required",
+            "password": "Password",
+            "password_holder": "Enter your password",
+            "login_btn": "Log in",
+            "signup_sentence": "Don't have an account?",
+            "signup": "Register",
+            "loader": "Veryfing User",
+            "invalid_credentials": "Invalid email or password"
+        }
+    }
+}

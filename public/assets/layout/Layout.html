@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  />
+  <title>E-Services Dashboard</title>
+  <link rel="stylesheet" href="Layout.css" />
+</head>
+<body>
+  <!-- Fixed Sidebar -->
+  <aside id="layout-menu" class="layout-menu">
+    <div class="app-brand demo">
+      <a href="ServicesPage.html" class="app-brand-link">
+        <img
+          src="Clinic-Logo.png"
+          class="logo-image"
+          style="width: 140px;"
+          alt="Clinic Logo"
+        />
+      </a>
+    </div>
+    <nav class="menu-inner">
+      <ul>
+        <li class="menu-item active">
+          <a href="#" class="menu-link" aria-current="page">
+            <img
+              src="home-agreement 1.svg"
+              alt=""
+              class="menu-icon"
+            />
+            <span>Clinic Services</span>
+          </a>
+        </li>
+        <li class="menu-item">
+          <a href="#" class="menu-link">
+            <img src="user.svg" alt="" class="menu-icon" />
+            <span>Profile</span>
+          </a>
+        </li>
+        <li class="menu-item">
+          <a href="#" class="menu-link">
+            <img src="contract.svg" alt="" class="menu-icon" />
+            <span>Book Appointment</span>
+          </a>
+        </li>
+        <li class="menu-item">
+          <a href="#" class="menu-link">
+            <img src="list.svg" alt="" class="menu-icon" />
+            <span>View Booked Appointment</span>
+          </a>
+        </li>
+        <li class="menu-item">
+          <a href="#" class="menu-link">
+            <img src="search-file.svg" alt="" class="menu-icon" />
+            <span>View Appointment List</span>
+          </a>
+        </li>
+        <li class="menu-item">
+          <a href="#" class="menu-link">
+            <img src="doctor.svg" alt="" class="menu-icon" />
+            <span>View Doctors List</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </aside>
+
+  <!-- Page Wrapper -->
+  <div class="layout-page">
+    <!-- Fixed Header -->
+    <header id="layout-navbar" class="layout-navbar">
+      <!-- sidebar toggle, visible only on small screens -->
+      <button id="sidebar-toggle" class="sidebar-toggle" aria-label="Toggle sidebar">
+        ☰
+      </button>
+
+      <div class="container-fluid">
+        <div class="navbar-nav ms-auto align-items-center">
+          <div class="avatar">
+            <img
+              src="Group 121.svg"
+              alt="User avatar"
+              class="rounded-circle"
+            />
+          </div>
+          <span class="username">Ahmad Mohammad</span>
+          <span class="divider"></span>
+          <button class="theme-toggle" aria-label="Toggle theme">
+            <img src="brightness.svg" alt="Theme toggle" />
+          </button>
+          <span class="divider"></span>
+          <a href="#" class="eng-lang">English</a>
+        </div>
+      </div>
+    </header>
+
+    <!-- Scrollable Content -->
+    <main class="content-wrapper">
+      <div class="container-box">
+        <section class="header-section">
+          <h1 class="content-header-h1">E-Services</h1>
+        </section>
+
+        <nav class="breadcrumb">
+          <span class="breadcrumb-link">Homepage</span>
+          <img src="Vector.svg" alt="›" class="breadcrumb-separator" />
+          <span
+            class="breadcrumb-current"
+            aria-current="page"
+            >E-Services</span
+          >
+        </nav>
+
+        <!-- Your page content goes here -->
+        <section class="page-content">
+          <h2>Rest of the content here</h2>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque
+            euismod, urna eu tincidunt consectetur, nisi nisl aliquam nunc, a
+            ultricies urna enim nec justo.
+          </p>
+          <!-- more content... -->
+        </section>
+      </div>
+    </main>
+  </div>
+
+  <script>
+    // Toggle sidebar on small screens
+    document.getElementById('sidebar-toggle').addEventListener('click', function() {
+      document.getElementById('layout-menu').classList.toggle('open');
+    });
+  </script>
+</body>
+</html>

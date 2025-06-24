@@ -1,0 +1,135 @@
+.services {
+  padding: 40px 20px;
+  background-color: #fff;
+  text-align: center;
+}
+
+.services h2 {
+  font-size: 2em;
+  margin-bottom: 30px;
+  font-family: "Cairo", sans-serif;
+}
+
+.service-list {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.service {
+  max-width: 220px;
+  background-color: #f0fdfc;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.service h3 {
+  margin-bottom: 10px;
+  font-family: "Cairo", sans-serif;
+}
+
+.specialty-section {
+  padding: 40px 20px;
+  text-align: center;
+  gap: 21px;
+  display: grid;
+}
+
+.specialty-section h1 {
+  font-size: 2.5em;
+  margin-bottom: 40px;
+}
+
+.specialty-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.specialty-card {
+  background-color: #124b4a;
+  color: white;
+  padding: 44px;
+
+  text-align: left;
+}
+
+.specialty-card h2 {
+  margin-top: 0;
+  font-size: 1.4em;
+  margin-bottom: 15px;
+}
+
+.specialty-card ul {
+  list-style-type: disc;
+  padding-left: 20px;
+}
+
+.specialty-card li {
+  margin-bottom: 10px;
+}
+.services-section {
+  padding: 22px 20px;
+  text-align: center;
+  background-color: #ffffff;
+  padding: 80px 40px;
+}
+
+.services-section h2 {
+  font-size: 32px;
+  margin-bottom: 10px;
+  font-weight: bold;
+  font-family: "Cairo", sans-serif;
+}
+
+// .services-section .subtitle {
+//   max-width: 800px;
+//   margin: 0 auto 40px;
+//   font-size: 14px;
+//   color: #555;
+// }
+
+.services-container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 30px;
+  margin-top: 50px;
+}
+
+.service-card {
+  width: 220px;
+  text-align: center;
+}
+
+.service-card .icon {
+  width: 120px;
+  height: 120px;
+  margin: 0 auto 20px;
+  background-color: #2e625d;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.service-card h3 {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  font-family: "Cairo", sans-serif;
+}
+
+.service-card p {
+  font-size: 14px;
+  color: #333;
+  line-height: 1.5;
+}
+.test {
+  width: 571px;
+  height: 571px;
+}

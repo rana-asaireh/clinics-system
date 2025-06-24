@@ -1,0 +1,5 @@
+<div class="pagination" *ngIf="totalPages > 1">
+  <a *ngFor="let page of pages" (click)="changePage(page)" [class.active]="currentPage === page">
+    {{ page }}
+  </a>
+</div>

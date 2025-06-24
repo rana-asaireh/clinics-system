@@ -1,0 +1,88 @@
+<div class="breadcrumb-container">
+  <h2 class="page-title">Appointment Details</h2>
+
+  <hr class="underline" />
+</div>
+<div class="Loader-background" *ngIf="loader">
+  <div class="indicator">
+    <svg width="24px" height="20px">
+      <polyline id="back" points="1 6 4 6 6 11 10 1 12 6 15 6"></polyline>
+      <polyline id="front" points="1 6 4 6 6 11 10 1 12 6 15 6"></polyline>
+    </svg>
+  </div>
+</div>
+<form [formGroup]="appointmentForm" (ngSubmit)="onSubmit()" *ngIf="!loader">
+
+  <label>Patient Name
+    <input type="text" formControlName="patientName" readonly />
+  </label>
+
+  <label>Doctor Name
+    <input type="text" formControlName="doctorName" readonly />
+  </label>
+
+  <label>Clinic Name
+    <input type="text" formControlName="clinicName" readonly />
+  </label>
+
+
+
+
+
+
+  <label>Patient Phone Number
+    <input type="text" formControlName="phoneNumber" readonly />
+  </label>
+
+  <label>Patient Email
+    <input type="email" formControlName="email" readonly />
+  </label>
+  <label>Appointment Status
+    <input type="text" formControlName="appointmentStatus" readonly />
+    <span [ngClass]="getStatusClass(appointmentForm.get('appointmentStatus')?.value)">
+
+    </span>
+  </label>
+
+  <label>Payment
+    <input type="text" formControlName="payment" readonly />
+  </label>
+
+  <div class="status-buttons"
+    *ngIf="appointmentForm.get('appointmentStatus')?.value === 'pending' || appointmentForm.get('appointmentStatus')?.value === 'approved'">
+    <button type="button" class="accept" (click)="onAccept()">Accept</button>
+    <button type="button" class="reject" (click)="onReject()">Reject</button>
+  </div>
+
+  <div *ngIf="isAccepted" class="accepted-section">
+
+
+    <h4>Appointment Details</h4>
+    <div class="custom-field">
+      <label for="drugsName">Drugs Name:</label>
+      <select id="drugsName" formControlName="drugsName">
+        <option value="">Select a drug</option>
+        <option *ngFor="let drug of drugs" [value]="drug.name">{{ drug.name }}</option>
+      </select>
+    </div>
+
+    <div class="custom-field">
+      <label for="diagnosesNames">Diagnosis Name:</label>
+      <select id="diagnosesNames" formControlName="diagnosesNames">
+        <option value="">Select a diagnosis</option>
+        <option *ngFor="let diagnosis of diagnoses" [value]="diagnosis.name">{{ diagnosis.name }}</option>
+      </select>
+    </div>
+
+    <button type="submit" *ngIf="appointmentForm.get('appointmentStatus')?.value !== 'rejected'">Submit</button>
+
+  </div>
+  <div *ngIf="formErrorMessage" class="error-message">
+    {{ formErrorMessage }}
+  </div>
+
+  <div *ngIf="rejectionMessage" class="error-message">
+    {{ rejectionMessage }}
+  </div>
+
+</form>

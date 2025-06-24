@@ -1,0 +1,20 @@
+<header class="header">
+  <div class="settings" style="display: flex;     flex-direction: row;">
+    <div><img src="/assets/logo.png" style="height: 50px; width: 100px;"></div>
+    <!-- <div class="line"></div>
+    <span class="language" (click)="switchLang(otherLang)">{{ otherLangLabel }}</span> -->
+
+
+  </div>
+  <nav class="nav-links">
+    <a routerLink="/home">Home</a>
+    <a routerLink="/home/clinic">About the clinic and services</a>
+    <a href="/home/doctors">Doctors</a>
+    <a routerLink="/home/contact-us">Contact us</a>
+  </nav>
+
+  <div class="auth-buttons">
+    <button class="register" routerLink="/signup">Register</button>
+    <button class="login" (click)="loginButton()">Login</button>
+  </div>
+</header>

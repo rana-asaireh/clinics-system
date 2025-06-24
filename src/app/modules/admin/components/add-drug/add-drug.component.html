@@ -1,0 +1,23 @@
+<div class="form-container">
+    <form [formGroup]="formGroup">
+        <h1 *ngIf="!id">Add Drug</h1>
+        <h1 *ngIf="id">Update Drug</h1>
+        <div class="line"></div>
+        <span *ngIf="success" class="success">{{success}}</span>
+        <span *ngIf="success" class="error">{{error}}</span>
+        <div class="form-group">
+            <label for="drug_name">Drug Name</label>
+            <input type="text" id="drug_name" placeholder="Add a Drug" formControlName="name"
+                [class.invalid]="formGroup.controls['name']?.touched && !formGroup.controls['name']?.valid">
+            <span class="error"
+                *ngIf="formGroup.controls['name']?.touched && formGroup.controls['name']?.errors?.['required']"> Drug
+                Name is required</span>
+        </div>
+        <div class="button-wrapper" *ngIf="!id">
+            <button (click)="addDrug()">Add</button>
+        </div>
+        <div class="button-wrapper" *ngIf="id">
+            <button (click)="updateDrug()">Update</button>
+        </div>
+    </form>
+</div>

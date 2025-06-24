@@ -1,0 +1,174 @@
+.breadcrumb-container {
+  padding: 16px;
+  font-family: Arial, sans-serif;
+}
+
+.page-title {
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 22px;
+}
+
+.breadcrumb {
+  font-size: 12px;
+  color: #444;
+}
+
+.breadcrumb a {
+  text-decoration: none;
+  margin-right: 4px;
+}
+.greenWord {
+  color: #2aa198;
+  margin-right: 4px;
+  font-size: 13px;
+}
+
+.breadcrumb a:hover {
+  text-decoration: underline;
+}
+
+.underline {
+  border: none;
+  border-top: 2px solid #2aa198;
+  margin-top: 8px;
+}
+
+form {
+  max-width: 800px;
+  margin-left: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+label {
+  display: flex;
+  flex-direction: column;
+  font-weight: 600;
+  font-size: 14px;
+  color: #333;
+}
+
+input,
+select {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  font-weight: bold;
+  cursor: pointer;
+  width: fit-content;
+}
+
+.status-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+h4 {
+  font-size: 16px;
+  margin-top: 20px;
+  color: #333;
+}
+.home-page {
+  text-decoration: none;
+  font-size: 13px;
+  color: black;
+}
+//loader
+.Loader-background {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100vh;
+  background-color: rgb(255, 255, 255);
+  padding: 0px;
+  margin: 0px;
+}
+.Clinic-Logo-Loader {
+  margin-right: 10px;
+  width: 50px;
+}
+.indicator {
+  display: flex;
+  gap: 10px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(2);
+}
+.indicator svg polyline {
+  fill: none;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.indicator svg polyline#back {
+  stroke: rgba(59, 211, 171, 0.3);
+}
+.indicator svg polyline#front {
+  stroke: #3bd3ab;
+  stroke-dasharray: 12, 36;
+  stroke-dashoffset: 48;
+  animation: dash 1s linear infinite;
+}
+.cta {
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+  color: #222;
+  font-weight: bold;
+}
+@-moz-keyframes dash {
+  62.5% {
+    opacity: 0;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+@-webkit-keyframes dash {
+  62.5% {
+    opacity: 0;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+@-o-keyframes dash {
+  62.5% {
+    opacity: 0;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+@keyframes dash {
+  62.5% {
+    opacity: 0;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+/* Spin animation */
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

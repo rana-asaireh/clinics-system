@@ -1,0 +1,172 @@
+.form-container {
+  padding: 20px;
+
+  h1 {
+    font-size: 28px;
+    margin-bottom: 20px;
+  }
+
+  .line {
+    width: 100%;
+    background-color: #4b9c8e;
+    height: 1px;
+  }
+
+  .radio-group {
+    display: flex;
+    gap: 20px;
+    margin-top: 5px;
+    align-items: center;
+
+    .l11 {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 14px;
+      color: #333;
+      margin-bottom: 20px;
+    }
+
+    label {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 14px;
+      color: #333;
+
+
+      input[type="radio"] {
+        accent-color: #4b9c8e;
+        width: 16px;
+        height: 16px;
+        cursor: pointer;
+      }
+    }
+  }
+
+  .password-wrapper {
+    position: relative;
+
+    input {
+      padding-right: 40px; 
+    }
+
+    .input-icon {
+      position: absolute;
+      right: 10px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 20px;
+      height: 20px;
+      cursor: pointer;
+    }
+
+    input[type="password"]::-webkit-password-field {
+      appearance: none;
+      -webkit-appearance: none;
+    }
+
+    input[type="password"]::-ms-reveal {
+      display: none;
+    }
+
+    input[type="password"]::-ms-clear {
+      display: none;
+    }
+
+  }
+
+  .success {
+    display: block;
+    color: green;
+    margin-bottom: -5px;
+    margin-top: 20px;
+  }
+
+  .form-group {
+    margin-bottom: 20px;
+
+    label {
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    input {
+      width: 100%;
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+
+      &.invalid {
+        border: 1px solid red;
+      }
+    }
+
+    .error {
+      color: red;
+      display: block;
+      margin-top: 10px;
+
+    }
+  }
+
+  .button-wrapper {
+    margin-top: 10px;
+
+    button {
+      background-color: #4B9C8E;
+      color: white;
+      border: none;
+      padding: 10px 25px;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+  }
+}
+
+.error {
+  color: red;
+  display: block;
+  margin-top: 10px;
+}
+
+
+.invalid {
+  border: 1px solid red;
+}
+
+select {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: white;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-image: url('data:image/svg+xml;charset=US-ASCII,<svg xmlns="http://www.w3.org/2000/svg" width="14" height="10" viewBox="0 0 14 10"><path fill="%234b9c8e" d="M7 10L0 0h14z"/></svg>');
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  background-size: 12px;
+  cursor: pointer;
+  margin-bottom: 20px;
+  margin-top: 5px;
+
+  &.invalid {
+    border: 1px solid red;
+  }
+}
+
+select:hover,
+select:focus {
+  border-color: #4b9c8e;
+}
+
+.l1 {
+  margin-top: 20px;
+
+  .error {
+    margin-top: -10px;
+    margin-bottom: 20px;
+  }
+}

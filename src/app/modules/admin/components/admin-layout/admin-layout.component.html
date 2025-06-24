@@ -1,0 +1,41 @@
+<app-auth-side-bar>
+  <ul sidebar class="menu-inner">
+    <li class="menu-item" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+      <a routerLink="/admin/clinics" class="menu-link">
+        <img src="clinic.svg" alt="" class="menu-icon" />
+        <span>Clinics</span>
+      </a>
+    </li>
+    <li class="menu-item" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+      <a routerLink="/admin/doctors" class="menu-link">
+        <img src="doctor.svg" alt="" class="menu-icon" />
+        <span>Doctors</span>
+      </a>
+    </li>
+    <li class="menu-item" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+      <a routerLink="/admin/diagnoses" class="menu-link">
+        <img src="diagnosis.svg" alt="" class="menu-icon" />
+        <span>Diagnoses</span>
+      </a>
+    </li>
+    <li class="menu-item" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+      <a routerLink="/admin/drugs" class="menu-link">
+        <img src="drugs.svg" alt="" class="menu-icon" />
+        <span>Drugs</span>
+      </a>
+    </li>
+  </ul>
+</app-auth-side-bar>
+<div class="layout-page">
+  <app-auth-header></app-auth-header>
+  <main class="content-wrapper">
+    <div class="container-box">
+      <section class="page-content">
+        <router-outlet></router-outlet>
+      </section>
+    </div>
+    <section class="page-content">
+      <app-auth-footer></app-auth-footer>
+    </section>
+  </main>
+</div>

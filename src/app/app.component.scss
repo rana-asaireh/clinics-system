@@ -1,0 +1,23 @@
+:root {
+  direction: ltr;
+}
+
+[dir="rtl"] {
+  direction: rtl;
+  text-align: right;
+
+  body, input, textarea, button {
+    direction: rtl !important;
+    text-align: right !important;
+  }
+}
+
+[dir="ltr"] {
+  direction: ltr;
+  text-align: left;
+
+  body, input, textarea, button {
+    direction: ltr !important;
+    text-align: left !important;
+  }
+}

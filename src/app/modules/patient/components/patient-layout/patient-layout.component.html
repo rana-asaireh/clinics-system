@@ -1,0 +1,36 @@
+<app-auth-side-bar>
+    <ul sidebar class="menu-inner">
+        <li class="menu-item" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+            <a routerLink="/patient/profile" class="menu-link">
+                <img src="images/user.png" alt="" class="menu-icon" />
+                <span>Profile</span>
+            </a>
+        </li>
+      
+        <li class="menu-item" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+            <a routerLink="/patient/appointment-list" class="menu-link">
+                <img src="images/list.png" alt="" class="menu-icon" />
+                <span>View appointment list</span>
+            </a>
+        </li>
+        <li class="menu-item" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+            <a routerLink="/patient/doctor-list" class="menu-link">
+                <img src="images/doctor.png" alt="" class="menu-icon" />
+                <span>View doctors list</span>
+            </a>
+        </li>
+    </ul>
+</app-auth-side-bar>
+<div class="layout-page">
+    <app-auth-header></app-auth-header>
+    <main class="content-wrapper">
+        <div class="container-box">
+            <section class="page-content">
+                <router-outlet></router-outlet>
+            </section>
+        </div>
+        <section class="page-content">
+            <app-auth-footer></app-auth-footer>
+        </section>
+    </main>
+</div>

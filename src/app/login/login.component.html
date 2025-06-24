@@ -1,0 +1,59 @@
+<div class="container">
+  <div class="overlap-wrapper">
+    <div class="overlap" [ngStyle]="{'background-image': backgroundImageUrl}" [ngClass]="{'rtl': isRtl, 'ltr': !isRtl}">
+      <div class="div">
+        <div class="rectangle">
+          <div class="text-wrapper">
+            <img src="Clinic-Logo.png" width="130" height="80" alt="Logo">
+          </div>
+          <div class="text-wrapper-2">{{'app.login.title' | translate}}</div>
+          <div class="loader-wrapper" *ngIf="loader">
+            <div class="loader">
+              <div class="indicator">
+                <svg width="24px" height="20px">
+                  <polyline id="back" points="1 6 4 6 6 11 10 1 12 6 15 6"></polyline>
+                  <polyline id="front" points="1 6 4 6 6 11 10 1 12 6 15 6"></polyline>
+                </svg>
+              </div>
+              <span>{{'app.login.loader' | translate}}</span>
+            </div>
+          </div>
+          <form [formGroup]="formGroup">
+            <div class="group">
+              <div class="input-wrapper">
+                <label for="email">{{'app.login.email' | translate}}</label>
+                <img src="Letter.png" class="input-icon" alt="email" />
+                <input type="email" id="email" [placeholder]="'app.login.email_holder' | translate"
+                  formControlName="email"
+                  [class.invalid]="formGroup.controls['email']?.touched && !formGroup.controls['email']?.valid" />
+                <span
+                  *ngIf="formGroup.controls['email']?.touched && formGroup.controls['email']?.errors?.['required']">{{'app.login.email_required'
+                  | translate}}</span>
+                <span
+                  *ngIf="formGroup.controls['email']?.touched && formGroup.controls['email']?.errors?.['email']">{{'app.login.email_invalid'
+                  | translate}}</span>
+              </div>
+              <div class="input-wrapper">
+                <label for="password">{{'app.login.password' | translate}}</label>
+                <img [src]="showPassword ? 'eye.png' : 'Invisible.png'" class="input-icon-2"
+                  alt="toggle password visibility" (click)="togglePasswordVisibility()" />
+                <input [type]="showPassword ? 'text' : 'password'" id="password"
+                  [placeholder]="'app.login.password_holder' | translate" formControlName="password"
+                  [class.invalid]="formGroup.controls['password']?.touched && !formGroup.controls['password']?.valid" />
+                <span
+                  *ngIf="formGroup.controls['password']?.touched && formGroup.controls['password']?.errors?.['required']">
+                  {{'app.login.password_required' | translate}}
+                </span>
+              </div>
+              <span *ngIf="error" class="error">{{error}}</span>
+              <button class="login-button" (click)="onSubmit()">{{'app.login.login_btn' | translate}}</button>
+            </div>
+          </form>
+          <div class="signup-row">
+            <span class="text-wrapper-3">{{'app.login.signup_sentence' | translate}}</span>
+            <span class="text-wrapper-4" routerLink="/signup">{{'app.login.signup' | translate}}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

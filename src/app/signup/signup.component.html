@@ -1,0 +1,194 @@
+
+<div class="container" >
+  <div class="overlap-wrapper">
+    <div class="overlap">
+      <div class="div"></div>
+      <div class="rectangle">
+        <div class="text-wrapper">
+          <img src="images/logo-removed-bg.png" width="130" height="80" alt="Logo">
+        </div>
+
+
+        <div class="text-wrapper-2">Create an Account</div>
+        <div class="Loader-wrapper" *ngIf="loader">
+          
+           <div class="loader">
+        <div class="indicator">
+            <svg width="24px" height="20px">
+                <polyline id="back" points="1 6 4 6 6 11 10 1 12 6 15 6"></polyline>
+                <polyline id="front" points="1 6 4 6 6 11 10 1 12 6 15 6"></polyline>
+            </svg>
+        </div>
+        <span>Creating Account...</span>
+       </div>
+      
+      </div>
+           
+        <form [formGroup]="registrationForm" (ngSubmit)="checkValidity()">
+          <div class="group">
+            <!-- Username -->
+            <div class="input-wrapper">
+              <label for="username">{{ formNameMapping['name'] }}</label>
+              <img src="/images/User1.png" class="input-icon" alt="username" />
+              <input type="text" id="username" placeholder="Enter your username" formControlName="name"
+                [class.invalid]="registrationForm.controls['name'].touched && registrationForm.controls['name'].errors?.['required']" />
+              <span
+                *ngIf="registrationForm.controls['name'].touched && registrationForm.controls['name'].errors?.['required']">
+                {{ formNameMapping['name'] }} is required
+              </span>
+            </div>
+
+            <!-- Email -->
+            <div class="input-wrapper">
+              <label for="email">{{ formNameMapping['email'] }}</label>
+              <img src="/images/Letter1.png" class="input-icon" alt="email" />
+              <input type="text" id="email" placeholder="Enter your email" formControlName="email"
+                [class.invalid]="registrationForm.controls['email'].touched && !registrationForm.controls['email'].valid" />
+              <span
+                *ngIf="registrationForm.controls['email'].touched && registrationForm.controls['email'].errors?.['required']">
+                {{ formNameMapping['email'] }} is required
+              </span>
+              <span
+                *ngIf="registrationForm.controls['email'].touched && registrationForm.controls['email'].errors?.['email']">
+                {{ formNameMapping['email'] }} is invalid
+              </span>
+            </div>
+
+
+            <!--phone-->
+            <div class="input-wrapper">
+              <label for="phone">{{ formNameMapping['phone'] }}</label>
+              <img src="/images/phone2.png" class="input-icon" alt="phone" />
+              <input type="text" id="phone" placeholder="Enter your phone number" formControlName="phone"
+                [class.invalid]="registrationForm.controls['phone'].touched && !registrationForm.controls['phone'].valid" />
+              <span
+                *ngIf="registrationForm.controls['phone'].touched && registrationForm.controls['phone'].errors?.['required']">
+                {{ formNameMapping['phone'] }} is required
+              </span>
+              <span *ngIf="registrationForm.controls['phone'].errors?.['pattern']">
+                Please enter a valid 10-digit number
+              </span>
+            </div>
+
+
+            <!--gender-->
+            <div class="input-wrapper">
+              <label>{{ formNameMapping['gender'] }}</label>
+              <div>
+                <label><input type="radio" value="male" formControlName="gender" /> Male</label>
+                <label><input type="radio" value="female" formControlName="gender" /> Female</label>
+
+              </div>
+
+              <span
+                *ngIf="registrationForm.controls['gender'].touched && registrationForm.controls['gender'].errors?.['required']">
+                {{ formNameMapping['gender'] }} is required
+              </span>
+            </div>
+
+
+            <!--dob-->
+            <div class="input-wrapper">
+              <label for="dob">{{ formNameMapping['dob'] }}</label>
+              <input type="date" id="dob" formControlName="dob"
+                [class.invalid]="registrationForm.controls['dob'].touched && !registrationForm.controls['dob'].valid" />
+              <span
+                *ngIf="registrationForm.controls['dob'].touched && registrationForm.controls['dob'].errors?.['required']">
+                {{ formNameMapping['dob'] }} is required
+              </span>
+              <span *ngIf="registrationForm.controls['dob'].errors?.['futureDate']">
+                Date cannot be in the future
+              </span>
+            </div>
+
+
+            <!-- Password -->
+            <div class="input-wrapper">
+              <label for="password">{{ formNameMapping['password'] }}</label>
+              <img [src]="isVisible.password ? '/images/Visible1.png' : '/images/Invisible1.png'" class="input-icon-2"
+                alt="Toggle visibility" (click)="toggleVisibility('password')" />
+              <input [type]="inputType.password " id="password" placeholder="Enter password" formControlName="password"
+                (focus)="showPasswordRules = true" (blur)="showPasswordRules = false"
+                [class.invalid]="registrationForm.controls['password'].touched && registrationForm.controls['password'].errors?.['required']" />
+              <span
+                *ngIf="registrationForm.controls['password'].touched && registrationForm.controls['password'].errors?.['required']">
+                {{ formNameMapping['password'] }} is required
+              </span>
+            </div>
+
+            <!-- Password Rules Box -->
+            <div id="message" *ngIf="registrationForm.controls['password'].errors?.['passwordRules'] as rules">
+              <h5>Password must contain the following:</h5>
+
+              <p [ngClass]="rules.lowerCase ? 'valid' : 'invalid'">A <b>lowercase</b> letter</p>
+              <p [ngClass]="rules.upperCase ? 'valid' : 'invalid'">A <b>capital letter</b></p>
+              <p [ngClass]="rules.digit ? 'valid' : 'invalid'">A <b>number</b></p>
+              <p [ngClass]="rules.specialChar ? 'valid' : 'invalid'">A <b>special character</b></p>
+              <p [ngClass]="rules.minLength ? 'valid' : 'invalid'">Minimum <b>8 characters</b></p>
+            </div>
+
+
+
+            <!-- Confirm Password -->
+            <div class="input-wrapper">
+              <label for="confirmPassword">{{ formNameMapping['confirmPassword'] }}</label>
+              <img [src]="isVisible.confirmPassword ? '/images/Visible1.png' : '/images/Invisible1.png'"
+                class="input-icon-2" alt="Toggle visibility" (click)="toggleVisibility('confirmPassword')" />
+              <input [type]="inputType.confirmPassword" id="confirmPassword" placeholder="Confirm password"
+                formControlName="confirmPassword" (focus)="showPasswordRules = true" (blur)="showPasswordRules = false"
+                [class.invalid]="registrationForm.controls['confirmPassword'].touched && registrationForm.controls['confirmPassword'].errors?.['required']" />
+              <span
+                *ngIf="registrationForm.controls['confirmPassword'].touched && registrationForm.controls['confirmPassword'].errors?.['required']">
+                {{ formNameMapping['confirmPassword'] }} is required
+              </span>
+              <span
+                *ngIf="this.registrationForm.controls['password'].value && this.registrationForm.controls['confirmPassword'].value && (this.registrationForm.controls['password'].value != this.registrationForm.controls['confirmPassword'].value)">
+                Password and Confirm Password do not match.
+              </span>
+            </div>
+
+            <!-- Confirm Password Rules Box -->
+            <div id="message"
+              *ngIf="!this.registrationForm.controls['password'].value && registrationForm.controls['confirmPassword'].errors?.['passwordRules'] as rules">
+              <h5>Confirm Password must contain the following:</h5>
+
+              <p [ngClass]="rules.lowerCase ? 'valid' : 'invalid'">A <b>lowercase</b> letter</p>
+              <p [ngClass]="rules.upperCase ? 'valid' : 'invalid'">A <b>capital letter</b></p>
+              <p [ngClass]="rules.digit ? 'valid' : 'invalid'">A <b>number</b></p>
+              <p [ngClass]="rules.specialChar ? 'valid' : 'invalid'">A <b>special character</b></p>
+              <p [ngClass]="rules.minLength ? 'valid' : 'invalid'">Minimum <b>8 characters</b></p>
+            </div>
+
+
+
+            <!-- Terms Checkbox -->
+            <div class="input-wrapper">
+              <div>
+                <input type="checkbox" id="terms" formControlName="terms" />
+                <label for="terms">{{ formNameMapping['termsMsg'] }}</label>
+
+              </div>
+
+
+              <span
+                *ngIf="registrationForm.controls['terms'].touched &&  registrationForm.controls['terms'].value === false">
+                {{ formNameMapping['terms'] }} is required
+              </span>
+            </div>
+
+            <!-- Register Button -->
+            <button class="login-button" type="submit">Register</button>
+          </div>
+        </form>
+
+        <!-- Redirect to Login -->
+        <div class="signup-row">
+          <span class="text-wrapper-4" routerLink="/login">Login</span>
+          <span class="text-wrapper-3">Already have an account?</span>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>

@@ -1,0 +1,309 @@
+.clinic-list {
+  padding: 20px;
+
+  h1 {
+    font-size: 28px;
+    margin-bottom: 20px;
+  }
+
+  .line {
+    width: 100%;
+    background-color: #4b9c8e;
+    height: 1px;
+  }
+
+  .add-clinic-btn {
+    background-color: #4b9c8e;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin: 20px 0;
+    float: right;
+    margin-top: 43px;
+
+    &:hover {
+      background-color: darken(#4b9c8e, 5%);
+    }
+  }
+
+  .container {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+    margin-bottom: 20px;
+    padding: 10px 20px;
+    padding-left: 0;
+    margin-top: 10px;
+  }
+
+  .label {
+    font-weight: bold;
+    font-size: 14px;
+    margin-bottom: 8px;
+  }
+
+  .input-group {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+  }
+
+  .select,
+  .search-input {
+    height: 40px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    padding: 0 12px;
+    font-size: 14px;
+    outline: none;
+    background: #fff;
+  }
+
+  .select {
+    appearance: none;
+    background-image: url('data:image/svg+xml;utf8,<svg fill="gray" height="20" viewBox="0 0 24 24" width="20" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/></svg>');
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 20px;
+  }
+
+  .search-container {
+    position: relative;
+    flex: 3;
+  }
+
+  .search-input {
+    padding-right: 40px;
+  }
+
+  .search-icon {
+    position: absolute;
+    right: 12px;
+    top: 65%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    svg {
+      width: 20px;
+      height: 20px;
+      fill: #4b9c8e;
+    }
+  }
+
+  .error {
+    color: red;
+    display: block;
+    margin-bottom: 15px;
+    margin-top: 20px;
+  }
+
+  .success {
+    color: green;
+    display: block;
+    margin-bottom: 15px;
+    margin-top: 20px;
+  }
+
+  .Loader-background {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(255, 255, 255);
+    padding: 0px;
+    margin: 0px;
+  }
+
+  .indicator {
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(2);
+  }
+
+  .indicator svg polyline {
+    fill: none;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+
+  .indicator svg polyline#back {
+    stroke: rgba(59, 211, 171, 0.3);
+  }
+
+  .indicator svg polyline#front {
+    stroke: #3bd3ab;
+    stroke-dasharray: 12, 36;
+    stroke-dashoffset: 48;
+    animation: dash 1s linear infinite;
+  }
+
+  .cta {
+    position: fixed;
+    bottom: 20px;
+    right: 30px;
+    color: #222;
+    font-weight: bold;
+  }
+
+  @-moz-keyframes dash {
+    62.5% {
+      opacity: 0;
+    }
+
+    to {
+      stroke-dashoffset: 0;
+    }
+  }
+
+  @-webkit-keyframes dash {
+    62.5% {
+      opacity: 0;
+    }
+
+    to {
+      stroke-dashoffset: 0;
+    }
+  }
+
+  @-o-keyframes dash {
+    62.5% {
+      opacity: 0;
+    }
+
+    to {
+      stroke-dashoffset: 0;
+    }
+  }
+
+  @keyframes dash {
+    62.5% {
+      opacity: 0;
+    }
+
+    to {
+      stroke-dashoffset: 0;
+    }
+  }
+
+  @keyframes spin {
+    from {
+      transform: rotate(0deg);
+    }
+
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    table-layout: fixed;
+
+    thead {
+      background-color: #f8f8f8;
+    }
+
+    th,
+    td {
+      border: 1px solid #ccc;
+      padding: 12px;
+      text-align: center;
+      vertical-align: middle;
+      word-wrap: break-word;
+    }
+
+    th {
+      padding: 14px;
+      font-weight: bold;
+      text-align: center;
+      vertical-align: middle;
+      word-wrap: break-word;
+      border: 1px solid #ccc;
+    }
+
+    .action-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      height: 80px;
+      border-top: 0px;
+      border-left: 0px;
+      align-items: center;
+
+      .delete-btn,
+      .edit-btn {
+        width: 40px;
+        height: 40px;
+        border-radius: 4px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+
+        img {
+          width: 20px;
+          height: 20px;
+        }
+      }
+
+      .delete-btn {
+        background-color: #e74c3c;
+
+        &:hover {
+          background-color: darken(#e74c3c, 5%);
+        }
+      }
+
+      .edit-btn {
+        background-color: #4b9c8e;
+
+        &:hover {
+          background-color: darken(#4b9c8e, 5%);
+        }
+      }
+    }
+  }
+
+  .tooltip {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+  }
+
+  .tooltip .tooltip-text {
+    visibility: hidden;
+    width: 50px;
+    background-color: #333;
+    color: #fff;
+    font-size: 12px;
+    text-align: center;
+    border-radius: 4px;
+    padding: 7px;
+    position: absolute;
+    bottom: 113%;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    transition: opacity 0.3s;
+    z-index: 10;
+  }
+
+  .tooltip:hover .tooltip-text {
+    visibility: visible;
+    opacity: 1;
+  }
+}

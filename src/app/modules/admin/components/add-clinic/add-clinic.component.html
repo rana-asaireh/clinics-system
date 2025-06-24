@@ -1,0 +1,23 @@
+<div class="form-container">
+    <form [formGroup]="formGroup">
+        <h1 *ngIf="!id">Add Clinic</h1>
+        <h1 *ngIf="id">Update Clinic</h1>
+        <div class="line"></div>
+        <span *ngIf="success" class="success">{{success}}</span>
+        <span *ngIf="error" class="error">{{error}}</span>
+        <div class="form-group">
+            <label for="clinic_name">Clinic Name</label>
+            <input type="text" id="clinic_name" placeholder="Add a Clinic" formControlName="name"
+                [class.invalid]="formGroup.controls['name']?.touched && !formGroup.controls['name']?.valid">
+            <span class="error"
+                *ngIf="formGroup.controls['name']?.touched && formGroup.controls['name']?.errors?.['required']"> Clinic
+                Name is required</span>
+        </div>
+        <div class="button-wrapper" *ngIf="!id">
+            <button (click)="addClinic()">Add</button>
+        </div>
+        <div class="button-wrapper" *ngIf="id">
+            <button (click)="updateClinic()">Update</button>
+        </div>
+    </form>
+</div>
