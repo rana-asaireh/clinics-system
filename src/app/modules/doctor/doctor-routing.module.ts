@@ -12,7 +12,7 @@ const routes: Routes = [
     path: '',
     component: DoctorLayoutComponent,
     children: [
-      { path: '', component: ProfileComponent },
+      { path: '', redirectTo: 'profile', pathMatch: 'full'},
       { path: 'profile', component: ProfileComponent },
       { path: 'appointments/:id', component: ViewAppointmentListComponent },
       { path: 'patients', component: PatientListComponent },
