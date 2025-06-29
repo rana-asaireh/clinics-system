@@ -4,7 +4,7 @@
   <button class="add-diagnosis-btn" routerLink="/admin/add-diagnosis">Add Diagnosis</button>
   <div class="container">
     <div class="input-group search-container">
-      <label class="label" for="searchBy">Doctor Name / Doctor Specialization</label>
+      <label class="label" for="searchBy">Diagnosis Name</label>
       <input type="text" class="search-input" placeholder="search doctor name" [(ngModel)]="searchTerm"
         (keydown)="onKeyDown($event)" (keyup)="onKeyUp($event)" />
       <span class="search-icon" (click)="onSearch()">
