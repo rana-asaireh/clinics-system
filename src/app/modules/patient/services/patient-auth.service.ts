@@ -1,10 +1,7 @@
 import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { map, Observable} from "rxjs";
-
 import { Patient } from "../../shared/models/patient.model";
-
-
 import { UserService } from '../../shared/services/user.service';
 
 
@@ -16,7 +13,7 @@ import { UserService } from '../../shared/services/user.service';
 export class PatientAuthService {
 
 
-  baseUrl = 'https://json-server-gky0.onrender.com/patient'
+  baseUrl = 'https://json-server-gky0.onrender.com'
   constructor(private http: HttpClient,private  userService:UserService) { }
 
   getPatientsList(): Observable<Patient[]> {
@@ -59,10 +56,5 @@ getCurrentPatientId(email: string): Observable<string | undefined> {
     })
   )
 }
-
-
-
-
-
 
 }

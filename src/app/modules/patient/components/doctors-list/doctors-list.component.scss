@@ -1,159 +1,159 @@
 h1 {
-    font-size: 28px;
-    margin-bottom: 20px;
+  font-size: 28px;
+  margin-bottom: 20px;
 }
 
 .line {
-    width: 100%;
-    background-color: #4b9c8e;
-    height: 1px;
-    margin-bottom: 10px;
+  width: 100%;
+  background-color: #4b9c8e;
+  height: 1px;
+  margin-bottom: 10px;
 }
 
 .filter {
+  display: flex;
+  flex-direction: row;
+  gap: 9%;
+  padding: 20px;
+  // background-color: #f9f9f9;
+  // border-radius: 10px;
+  // box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  flex-wrap: wrap; // makes it responsive on smaller screens
+
+  >div {
     display: flex;
-    flex-direction: row;
-    gap: 9%;
-    padding: 20px;
-    // background-color: #f9f9f9;
-    // border-radius: 10px;
-    // box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-    flex-wrap: wrap; // makes it responsive on smaller screens
+    flex-direction: column;
+    gap: 8px;
+
+    label {
+      font-weight: 600;
+      font-size: 14px;
+      color: #333;
+      margin-bottom: 4px;
+    }
+  }
+
+  // Clinic Name (first section) - 30% width
+  >div:first-child {
+    flex: 0 0 30%;
+    min-width: 200px;
+
+    select {
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+  }
+
+  // Doctor Name (second section) - 60% width
+  >div:nth-child(2) {
+    flex: 0 0 60%;
+    min-width: 300px;
 
     >div {
-        display: flex;
-        flex-direction: column;
-        gap: 8px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      position: relative;
 
-        label {
-            font-weight: 600;
-            font-size: 14px;
-            color: #333;
-            margin-bottom: 4px;
-        }
-    }
-
-    // Clinic Name (first section) - 30% width
-    >div:first-child {
-        flex: 0 0 30%;
-        min-width: 200px;
-
-        select {
-            padding: 8px;
-            border: 1px solid #ccc;
-            border-radius: 6px;
-        }
-    }
-
-    // Doctor Name (second section) - 60% width
-    >div:nth-child(2) {
-        flex: 0 0 60%;
-        min-width: 300px;
-
-        >div {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            position: relative;
-
-            input {
-                flex: 1;
-                padding: 8px;
-                border: 1px solid #ccc;
-                border-radius: 6px;
-            }
-
-            .search-icon {
-                cursor: pointer;
-                padding: 5px;
-                transition: transform 0.2s ease;
-                border-radius: 4px;
-                position: absolute;
-                right: 0;
-                color: green;
-
-                // &:hover {
-                //     transform: scale(1.1);
-                //     background-color: #eaeaea;
-                // }
-            }
-        }
-    }
-
-
-
-    select,
-    input {
-        padding: 10px 12px;
+      input {
+        flex: 1;
+        padding: 8px;
         border: 1px solid #ccc;
         border-radius: 6px;
-        font-size: 14px;
-        transition: border-color 0.2s ease;
+      }
 
-        &:focus {
-            outline: none;
-            border-color: #4b9c8e;
-        }
+      .search-icon {
+        cursor: pointer;
+        padding: 5px;
+        transition: transform 0.2s ease;
+        border-radius: 4px;
+        position: absolute;
+        right: 0;
+        color: green;
+
+        // &:hover {
+        //     transform: scale(1.1);
+        //     background-color: #eaeaea;
+        // }
+      }
     }
+  }
+
+
+
+  select,
+  input {
+    padding: 10px 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 14px;
+    transition: border-color 0.2s ease;
+
+    &:focus {
+      outline: none;
+      border-color: #4b9c8e;
+    }
+  }
 }
 
 
 .doctors-list {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    gap: 2rem;
-    padding: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 2rem;
+  padding: 2rem;
 
-    >div {
-        width: 250px;
-        background-color: #fff;
-        border-radius: 10px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        text-align: center;
-        padding: 1.5rem;
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
+  >div {
+    width: 250px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    padding: 1.5rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 
-        &:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
-        }
-
-        img {
-            width: 100px;
-            height: 100px;
-            object-fit: cover;
-            border-radius: 50%;
-            margin-bottom: 1rem;
-        }
-
-        h2 {
-            margin: 0.5rem 0;
-            font-size: 1.25rem;
-            color: #333;
-        }
-
-        p {
-            margin: 0.25rem 0;
-            font-size: 0.95rem;
-            color: #555;
-        }
-
-        button {
-            margin-top: 1rem;
-            padding: 0.5rem 1.2rem;
-            background-color: #4b9c8e;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.2s;
-
-            &:hover {
-                background-color: #3e8378;
-            }
-        }
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
     }
+
+    img {
+      width: 100px;
+      height: 100px;
+      object-fit: cover;
+      border-radius: 50%;
+      margin-bottom: 1rem;
+    }
+
+    h2 {
+      margin: 0.5rem 0;
+      font-size: 1.25rem;
+      color: #333;
+    }
+
+    p {
+      margin: 0.25rem 0;
+      font-size: 0.95rem;
+      color: #555;
+    }
+
+    button {
+      margin-top: 1rem;
+      padding: 0.5rem 1.2rem;
+      background-color: #4b9c8e;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.2s;
+
+      &:hover {
+        background-color: #3e8378;
+      }
+    }
+  }
 }
 
 
@@ -161,43 +161,45 @@ h1 {
 
 .no-doctor {
 
-    margin: 30px;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-    color: #f88376;
-    font-weight: bold;
+  margin: 30px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  color: #f88376;
+  font-weight: bold;
 
-    img {
-        width: 100px;
-        height: 100px;
-        object-fit: cover;
-        border-radius: 50%;
-        margin-bottom: 1rem;
-        opacity: 0.5;
-    }
+  img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 1rem;
+    opacity: 0.5;
+  }
 
 }
 
 @media (max-width: 768px) {
-    .filter {
-        flex-direction: column;
-        gap: 2vh;
+  .filter {
+    flex-direction: column;
+    gap: 2vh;
 
-        >div {
-            flex: 1 1 100%;
-        }
+    >div {
+      flex: 1 1 100%;
     }
+  }
 }
-.Loader-background {
+
+.Loader-background .indicator {
+  margin-top: 100px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   background-color: rgb(255, 255, 255);
   padding: 0px;
-  margin: 0px;
+
 }
 
 .indicator {

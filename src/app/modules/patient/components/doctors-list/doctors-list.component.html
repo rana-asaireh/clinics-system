@@ -1,11 +1,3 @@
-<div class="Loader-background" *ngIf="loader">
-        <div class="indicator">
-            <svg width="24px" height="20px">
-                <polyline id="back" points="1 6 4 6 6 11 10 1 12 6 15 6"></polyline>
-                <polyline id="front" points="1 6 4 6 6 11 10 1 12 6 15 6"></polyline>
-            </svg>
-        </div>
-</div>
 <h1>Dotors List</h1>
 <div class="line"></div>
 
@@ -28,24 +20,32 @@
 
     </div>
 </div>
-
-<div class="doctors-list" *ngIf=" !loader &&doctors.length; else  noDoctor"  >
+<div class="Loader-background" *ngIf="loader">
+    <div class="indicator">
+        <svg width="24px" height="20px">
+            <polyline id="back" points="1 6 4 6 6 11 10 1 12 6 15 6"></polyline>
+            <polyline id="front" points="1 6 4 6 6 11 10 1 12 6 15 6"></polyline>
+        </svg>
+    </div>
+</div>
+<div class="doctors-list" *ngIf=" !loader &&doctors.length; else  noDoctor">
     <div *ngFor="let doctor of filteredDoctors">
         <img src="images/doctorImage.png" alt="">
         <h2>Dr. {{doctor.name}} </h2>
         <p>{{doctor.specification}}</p>
         <p>{{getClinicNameByDoctorId(doctor.clinic_id)}}</p>
         <button [routerLink]="['/patient/book-appointment']"
-        [queryParams]="{ doctorName: doctor.name, clinicName: getClinicNameByDoctorId(doctor.clinic_id), doctorId: doctor.id }">
-        Book Appointment</button>
+            [queryParams]="{ doctorName: doctor.name, clinicName: getClinicNameByDoctorId(doctor.clinic_id), doctorId: doctor.id }">
+            Book Appointment</button>
     </div>
 </div>
 <app-pagination [totalItems]="totalDoctors" [currentPage]="currentPage" [itemsPerPage]="pageSize"
     (pageChanged)="goToPage($event)">
 
 </app-pagination>
+
 <ng-template #noDoctor>
-    <div class="no-doctor">
+    <div class="no-doctor" *ngIf="!loader">
         <img src="images/doctorImage.png" alt="">
         <h2>No Doctor Found</h2>
     </div>
