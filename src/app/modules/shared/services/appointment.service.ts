@@ -2,7 +2,7 @@ import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { map, mergeMap, Observable, retry } from 'rxjs';
 import { Appointment } from '../models/appointment.model';
-import { AppComponent } from '../../../app.component';
+
 
 
 @Injectable({

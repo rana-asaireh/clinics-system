@@ -1,0 +1,128 @@
+<div class="sign-up-page">
+  <div class="sign-up-contents">
+    <div class="page-head">
+      <img src="images/logo-removed-bg.png" class="logo">
+    </div>
+    <form action="" [formGroup]="registrationForm" class="signup-form" (ngSubmit)="checkValidity()">
+
+      <h3 class="form-title">Create an Account</h3>
+      <div class="form-control">
+        <label>{{formNameMapping['username']}}</label>
+        <div class="form-control-input">
+          <input type="text" formControlName="username" placeholder="Enter your username">
+          <img src="/images/User1.png" class="icons" alt="username" />
+        </div>
+
+        <span
+          *ngIf="registrationForm.controls['username'].touched && registrationForm.controls['username'].errors?.['required']"
+          class="invalid">{{formNameMapping['username']}} is required</span>
+
+      </div>
+      <div class="form-control">
+        <label>{{formNameMapping['email']}}</label>
+        <div class="form-control-input">
+          <input type="text" formControlName="email" placeholder="Enter your email">
+          <img src="/images/Letter1.png" class="icons" alt="email" />
+        </div>
+        <span
+          *ngIf="registrationForm.controls['email'].touched && registrationForm.controls['email'].errors?.['required']"
+          class="invalid">{{formNameMapping['email']}} is required</span>
+        <span *ngIf="registrationForm.controls['email'].touched && registrationForm.controls['email'].errors?.['email']"
+          class="invalid">{{formNameMapping['email']}} Invalid </span>
+      </div>
+
+      <div class="form-control">
+        <label>{{formNameMapping['password']}}</label>
+        <div class="form-control-input">
+          <input [type]="inputType" formControlName="password" placeholder="Enter password"
+            (focus)="showPasswordRules = true" (blur)="showPasswordRules = false"
+            (input)="checkPasswordStrength(registrationForm.controls['password'].value)">
+          <img [src]="isVisible ? '/images/Visible1.png' : '/images/Invisible1.png'" class="icons  cursor-pointer"
+            alt="password" (click)="PasswordVisiblityHandler()" />
+        </div>
+        <span
+          *ngIf="registrationForm.controls['password'].touched && registrationForm.controls['password'].errors?.['required']"
+          class="invalid">{{formNameMapping['password']}} is required</span>
+        <div *ngIf="showPasswordRules &&  !registrationForm.controls['password'].errors?.['required']" id="message"
+          class="password-rules-box">
+          <h5>Password must contain the following:</h5>
+          <p [ngClass]="passwordRules.lowerCase ? 'valid' : 'invalid'">A <b>lowercase</b> letter</p>
+          <p [ngClass]="passwordRules.upperCase ? 'valid' : 'invalid'">A <b>capital (uppercase)</b> letter</p>
+          <p [ngClass]="passwordRules.digit ? 'valid' : 'invalid'">A <b>number</b></p>
+          <p [ngClass]="passwordRules.specialChar ? 'valid' : 'invalid'">A <b>special character</b></p>
+          <p [ngClass]="passwordRules.minLength ? 'valid' : 'invalid'">Minimum <b>8 characters</b></p>
+        </div>
+      </div>
+
+      <div class="form-control">
+        <label>{{formNameMapping['confirmPassword']}}</label>
+        <div class="form-control-input">
+          <input [type]="inputType" formControlName="confirmPassword" placeholder="Confirm password">
+          <img [src]="isVisible ? '/images/Visible1.png' : '/images/Invisible1.png'" class="icons" alt="confirmPassword"
+            (click)="PasswordVisiblityHandler()" />
+        </div>
+        <span
+          *ngIf="registrationForm.controls['confirmPassword'].touched && registrationForm.controls['confirmPassword'].errors?.['required']"
+          class="invalid">{{formNameMapping['confirmPassword']}} is required</span>
+
+      </div>
+      <div class="form-control">
+
+        <input type="checkbox" formControlName="terms">
+        <label>{{formNameMapping['terms']}}</label>
+      </div>
+
+
+      <div class="form-control">
+        <button type="submit">Register</button>
+      </div>
+
+      <p class="login-link">
+        Already have an account? <a routerLink="#">Login</a>
+      </p>
+    </form>
+
+  </div>
+</div>
+
+<!-- 
+<div class="macbook-pro">
+    <div class="overlap-wrapper">
+      <div class="overlap">
+        <div class="div"></div>
+  
+        <div class="rectangle-2">
+          <div class="text-wrapper-5">Logo</div>
+          <div class="text-wrapper-2">Sign in</div>
+  
+          <div class="group-2">
+   
+            <div class="input-wrapper">
+              <img src="/images/Letter1.png" class="input-icon" alt="email" />
+              <input type="email" placeholder="Email Address" />
+            </div>
+   
+            <div class="input-wrapper">
+              <img src="/images/Invisible.png" class="input-icon" alt="password" />
+              <input type="password" placeholder="Password" />
+            </div>
+  
+ 
+            <button class="login-button">Login</button>
+          </div>
+  
+ 
+      
+          <div class="signup-row">
+            <span class="text-wrapper-4">Sign up</span>
+            <span class="text-wrapper-3">?Do not have an account</span>
+            
+          </div>
+          
+  
+ 
+          
+        </div>
+      </div>
+    </div>
+  </div> -->
